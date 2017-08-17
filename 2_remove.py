@@ -18,9 +18,18 @@ def comma_remover(INPUT_FILE, OUTPUT_FILE):
 
         print("total lines of " + INPUT_FILE + str(" :      ") + str(cnt))
 
-
-list_of_input_files = ['/Users/Pharrell_WANG/PycharmProjects/fdc-tf-data-preprocessing/data_after_step1_concat/merged_from_three_sequences_size_16.csv']
-list_of_output_files = ['/Users/Pharrell_WANG/PycharmProjects/fdc-tf-data-preprocessing/data_after_step2_remove/comma_removed_size_16.csv']
+import os
+homedir = os.environ['HOME']
+list_of_input_files = [homedir + '/data/step1_output/size_08_files.csv',
+                       homedir + '/data/step1_output/size_16_files.csv',
+                       homedir + '/data/step1_output/size_32_files.csv',
+                       homedir + '/data/step1_output/size_64_files.csv'
+                       ]
+list_of_output_files = [homedir + '/data/step2_output/size_08_files.csv',
+                        homedir + '/data/step2_output/size_16_files.csv',
+                        homedir + '/data/step2_output/size_32_files.csv',
+                        homedir + '/data/step2_output/size_64_files.csv'
+                        ]
 
 for x in range(len(list_of_input_files)):
     comma_remover(list_of_input_files[x], list_of_output_files[x])
