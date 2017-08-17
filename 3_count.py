@@ -2,8 +2,10 @@
 # Author: Pharrell_WANG
 #   Date: 2017/6/28
 # ------------------------------------------------------------------------------
-from csv_mode_counter import csv_mode_preprocessing
+import os
+from utils.mode_counter import mode_counter
 
-# ORIG_DATA = '/Users/Pharrell_WANG/PycharmProjects/fdc-tf-data-preprocessing/data_after_step2_remove/comma_removed_size_16.csv'
-ORIG_DATA = '/Users/Pharrell_WANG/PycharmProjects/fdc-tf-data-preprocessing/train_data/training_data_16x16.csv'
-x_ordered_dict = csv_mode_preprocessing(OUTPUT_FILE=ORIG_DATA)
+homedir = os.environ['HOME']
+input_file = homedir + '/data/step2_output/size_16_files.csv'
+
+x_ordered_dict = mode_counter(INPUT_FILE=input_file)

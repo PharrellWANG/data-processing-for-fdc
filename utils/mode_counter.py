@@ -5,8 +5,8 @@
 from collections import OrderedDict
 
 
-def csv_mode_preprocessing(OUTPUT_FILE):
-    print(str(OUTPUT_FILE))
+def mode_counter(INPUT_FILE):
+    print(str(INPUT_FILE))
     x = OrderedDict()
 
     mode_0 = 0
@@ -47,7 +47,7 @@ def csv_mode_preprocessing(OUTPUT_FILE):
     mode_35 = 0
     mode_36 = 0
 
-    with open(OUTPUT_FILE, 'r') as r:
+    with open(INPUT_FILE, 'r') as r:
         cnt = 0
         for num, line in enumerate(r):
             cnt += 1
