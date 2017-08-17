@@ -2,6 +2,8 @@
 # Author: Pharrell_WANG
 # Date: 2017/6/28
 # ------------------------------------------------------------------------------
+
+# Here are the hyper parameters
 USE_SUBPLOTS = False
 INDEX = 3
 if INDEX == 3:
@@ -17,11 +19,7 @@ import os
 import pandas
 import matplotlib.pyplot as plt
 
-# from skimage import io
-# import numpy as np
-
 homedir = os.environ['HOME']
-
 list_of_output_files = [homedir + '/data/step2_output/size_08_files.csv',
                         homedir + '/data/step2_output/size_16_files.csv',
                         homedir + '/data/step2_output/size_32_files.csv',
