@@ -3,12 +3,22 @@
 # Date: 2017/6/28
 # ------------------------------------------------------------------------------
 USE_SUBPLOTS = False
+INDEX = 3
+if INDEX == 3:
+    RESHAPE = 64
+elif INDEX == 2:
+    RESHAPE = 32
+elif INDEX == 1:
+    RESHAPE = 16
+elif INDEX == 0:
+    RESHAPE = 8
 
 import os
 import pandas
 import matplotlib.pyplot as plt
+
 # from skimage import io
-import numpy as np
+# import numpy as np
 
 homedir = os.environ['HOME']
 
@@ -29,9 +39,9 @@ def set_title(ax, title, default=""):
 
 
 # FILE = "../exam.csv"
-FILE = list_of_output_files[0]
+FILE = list_of_output_files[INDEX]
 
-csv = pandas.read_csv(FILE, nrows=3).values
+csv = pandas.read_csv(FILE, nrows=100).values
 print(FILE)
 counter = 0
 for row in csv:
@@ -42,7 +52,7 @@ for row in csv:
     # print(row.shape)
     # print('//////////////')
 
-    if counter == 1:
+    if counter == 35:
         features, label = row[:-1], row[-1]
         # print('>-----------=====>>>>>>>')
         #
@@ -58,7 +68,7 @@ for row in csv:
         # print(label)
         # print(type(label))
         # print('')
-        features = features.reshape(8, 8)
+        features = features.reshape(RESHAPE, RESHAPE)
         print(features)
 
         features_divided = features // 2
@@ -111,10 +121,11 @@ for row in csv:
             ax9.set_axis_off()
             ax10.set_axis_off()
 
-            ax1.imshow(features, cmap='gray')
-            ax2.imshow(features_divided, cmap='gray')
+            ax1.imshow(features, cmap='gray', vmin=0, vmax=255)
+            ax2.imshow(features_divided, cmap='gray', vmin=0, vmax=255)
+            ax3.imshow(features, cmap='gray', interpolation='none',
+                       vmin=0, vmax=255)
+            # ref 1: http://scipy-cookbook.readthedocs.io/items/Matplotlib_Show_colormaps.html
+            # ref 2: https://stackoverflow.com/questions/30301986/matplotlib-imshow-and-pixel-intensity
             plt.axis('off')
             plt.show()
-
-    else:
-        break
