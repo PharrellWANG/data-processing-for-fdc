@@ -97,7 +97,7 @@ def main(_):
 
     FILE = CSV_FILES_FOR_VISUAL[INDEX]
 
-    csv = pandas.read_csv(FILE, nrows=80000).values
+    csv = pandas.read_csv(FILE, nrows=40000).values
     # csv = pandas.read_csv(FILE).values
     print(FILE)
     counter = 0
@@ -108,7 +108,7 @@ def main(_):
     fig.set_facecolor('#B2B2B2')
     fig.suptitle(
         "Visualization of 48 (6x8) collected block data \n INTRA MODE: " + FLAGS.mode +
-        '\n BLOCK SIZE: ' + FLAGS.block_size, fontsize=12)
+        '\n BLOCK SIZE: ' + FLAGS.block_size, fontsize=24)
     for row in csv:
         selected_mode = int(FLAGS.mode)
         features, label = row[:-1], row[-1]
