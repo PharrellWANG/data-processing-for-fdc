@@ -7,31 +7,47 @@ import os
 homedir = os.environ['HOME']
 
 size_64_files = [
-    homedir + '/data/poznan_hall_1920x1088/data_exported/mixed_data_0.csv',
-    homedir + '/data/poznan_street_1920x1088/data_exported/mixed_data_0.csv',
-    homedir + '/data/shark_1920x1088/data_exported/mixed_data_0.csv',
-    homedir + '/data/undo_dancer_1920x1088/data_exported/mixed_data_0.csv'
+    homedir + '/data/poznan_hall_1920x1088/mixed_data_0.csv',
+    homedir + '/data/poznan_street_1920x1088/mixed_data_0.csv',
+    homedir + '/data/shark_1920x1088/mixed_data_0.csv',
+    homedir + '/data/undo_dancer_1920x1088/mixed_data_0.csv',
+    homedir + '/data/newspaper/mixed_data_0.csv',
+    homedir + '/data/kendo/mixed_data_0.csv',
+    homedir + '/data/ghost_fly/mixed_data_0.csv',
+    homedir + '/data/balloons/mixed_data_0.csv'
 ]
 
 size_32_files = [
-    homedir + '/data/poznan_hall_1920x1088/data_exported/mixed_data_1.csv',
-    homedir + '/data/poznan_street_1920x1088/data_exported/mixed_data_1.csv',
-    homedir + '/data/shark_1920x1088/data_exported/mixed_data_1.csv',
-    homedir + '/data/undo_dancer_1920x1088/data_exported/mixed_data_1.csv'
+    homedir + '/data/poznan_hall_1920x1088/mixed_data_1.csv',
+    homedir + '/data/poznan_street_1920x1088/mixed_data_1.csv',
+    homedir + '/data/shark_1920x1088/mixed_data_1.csv',
+    homedir + '/data/undo_dancer_1920x1088/mixed_data_1.csv',
+    homedir + '/data/newspaper/mixed_data_1.csv',
+    homedir + '/data/kendo/mixed_data_1.csv',
+    homedir + '/data/ghost_fly/mixed_data_1.csv',
+    homedir + '/data/balloons/mixed_data_1.csv'
 ]
 
 size_16_files = [
-    homedir + '/data/poznan_hall_1920x1088/data_exported/mixed_data_2.csv',
-    homedir + '/data/poznan_street_1920x1088/data_exported/mixed_data_2.csv',
-    homedir + '/data/shark_1920x1088/data_exported/mixed_data_2.csv',
-    homedir + '/data/undo_dancer_1920x1088/data_exported/mixed_data_2.csv'
+    homedir + '/data/poznan_hall_1920x1088/mixed_data_2.csv',
+    homedir + '/data/poznan_street_1920x1088/mixed_data_2.csv',
+    homedir + '/data/shark_1920x1088/mixed_data_2.csv',
+    homedir + '/data/undo_dancer_1920x1088/mixed_data_2.csv',
+    homedir + '/data/newspaper/mixed_data_2.csv',
+    homedir + '/data/kendo/mixed_data_2.csv',
+    homedir + '/data/ghost_fly/mixed_data_2.csv',
+    homedir + '/data/balloons/mixed_data_2.csv'
 ]
 
 size_08_files = [
-    homedir + '/data/poznan_hall_1920x1088/data_exported/mixed_data_3.csv',
-    homedir + '/data/poznan_street_1920x1088/data_exported/mixed_data_3.csv',
-    homedir + '/data/shark_1920x1088/data_exported/mixed_data_3.csv',
-    homedir + '/data/undo_dancer_1920x1088/data_exported/mixed_data_3.csv'
+    homedir + '/data/poznan_hall_1920x1088/mixed_data_3.csv',
+    homedir + '/data/poznan_street_1920x1088/mixed_data_3.csv',
+    homedir + '/data/shark_1920x1088/mixed_data_3.csv',
+    homedir + '/data/undo_dancer_1920x1088/mixed_data_3.csv',
+    homedir + '/data/newspaper/mixed_data_3.csv',
+    homedir + '/data/kendo/mixed_data_3.csv',
+    homedir + '/data/ghost_fly/mixed_data_3.csv',
+    homedir + '/data/balloons/mixed_data_3.csv'
 ]
 
 INPUT_LIST = [size_08_files, size_16_files, size_32_files, size_64_files]
