@@ -4,7 +4,7 @@
 
 * This project is for processing the data before training the model for intra-mode-prediction.
 
-* [Click here to see the behaviour details of the project](http://fast-depth-coding.readthedocs.io/en/latest/data-collecting.html#behaviours-of-the-project)
+* [Click here to see the behaviour details of the project](http://fast-depth-coding.readthedocs.io/en/latest/data-collection.html#behaviours-of-the-project)
 
 ### Caveats
 
