@@ -502,10 +502,10 @@ def data_generator(ORIG, TRAINING, VALIDATING, TESTING,
                 mode_28 += 1
                 if mode_28 <= 8301:
                     training_data.write(line)
-                elif 8301 < mode_20 <= 11068:
+                elif 8301 < mode_28 <= 11068:
                     validating_data.write(line)
                     # validating_data3.write(line)
-                elif 11068 < mode_20 <= 13835:
+                elif 11068 < mode_28 <= 13835:
                     testing_data.write(line)
 
             elif mode == 29:
