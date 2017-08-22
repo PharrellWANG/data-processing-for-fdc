@@ -1,3 +1,9 @@
+# ==============================================================================
+# Author: Pharrell_WANG
+# Date: 2017/6/28
+# ==============================================================================
+
+
 def comma_remover(INPUT_FILE, OUTPUT_FILE):
     with open(INPUT_FILE, 'r') as r, \
             open(OUTPUT_FILE, 'w') as w:

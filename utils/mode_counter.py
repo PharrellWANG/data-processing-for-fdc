@@ -1,12 +1,14 @@
-# ------------------------------------------------------------------------------
+# ==============================================================================
 # Author: Pharrell_WANG
-#   Date: 2017/6/28
-# ------------------------------------------------------------------------------
+# Date: 2017/6/28
+# ==============================================================================
+
 from collections import OrderedDict
 
 
 def mode_counter(INPUT_FILE):
-    print(str(INPUT_FILE))
+    print('=================================================')
+    print('Name of the data file: ' + str(INPUT_FILE))
     x = OrderedDict()
 
     mode_0 = 0
@@ -178,32 +180,38 @@ def mode_counter(INPUT_FILE):
         x['mode_36'] = mode_36
 
         veri_1 = 0
-
+        print('=================================================')
+        print("COUNTING START...")
         for m, n in x.items():
-            print(str(m) + " :   " + str(n) + '   <<------ ||-------->>      ' + str(m) + " / total (%) :   " + str(
+            print(str(m) + " :   " + str(
+                n) + '   <<------ ||-------->>      ' + str(
+                m) + " / total (%) :   " + str(
                 float(n) / float(cnt)))
             veri_1 += float(n) / float(cnt)
 
-        print('===================')
-        print("veri_1 (should be nearly equal to 1 or 0.999999..) : " + str(veri_1))
-        print('===================')
+        print('*** Verification ***')
+        print(
+            "Sum of the percentages (output should be nearly equal to 1 or 0.999999..) : " + str(
+                veri_1))
 
         sorted_x = OrderedDict(sorted(x.items(), key=lambda t: t[1]))
 
         print("")
-        print("------------beautiful cutting line, above is unsorted, below is sorted-----------")
-        print("")
-
+        print('Below are the sorted list of all the modes (smallest first)')
         veri_2 = 0
         for m, n in sorted_x.items():
-            print(str(m) + " :   " + str(n) + '  <<------ ||-------->> ' + str(m) + " / total (%) :   " + str(
+            print(str(m) + " :   " + str(n) + '  <<------ ||-------->> ' + str(
+                m) + " / total (%) :   " + str(
                 float(n) / float(cnt)))
             veri_2 += float(n) / float(cnt)
 
         print('===================')
-        print("veri_2 (should be nearly equal to 1 or 0.999999..) : " + str(veri_2))
-        print('===================')
-
-        print("total lines : " + str(cnt))
+        print('*** Verification ***')
+        print(
+            "Sum of the percentages (output should be nearly equal to 1 or 0.999999..) : " + str(
+                veri_2))
+        print("total lines/records in the csv file : " + str(cnt))
+        print("COUNTING END...")
+        print('=================================================')
 
         return x
