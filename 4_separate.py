@@ -1,7 +1,7 @@
-# ------------------------------------------------------------------------------
+# ==============================================================================
 # Author: Pharrell_WANG
-#   Date: 2017/6/28
-# ------------------------------------------------------------------------------
+# Date: 2017/6/28
+# ==============================================================================
 # from csv_mode_counter import csv_mode_preprocessing
 TRAINING_DATA_PERCENT = 0.6
 TESTING_DATA_PERCENT = 0.2
@@ -589,7 +589,6 @@ def data_generator(ORIG, TRAINING, VALIDATING, TESTING,
                     testing_data.write(line)
 
 
-# x_ordered_dict = csv_mode_preprocessing(OUTPUT_FILE=ORIG)
 data_generator(ORIG=ORIG, TRAINING=TRAINING, VALIDATING=VALIDATING,
                TESTING=TESTING,
                VALIDATING0=VALIDATING0,

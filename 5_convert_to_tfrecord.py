@@ -83,34 +83,18 @@ for x in FILE_TO_BE_CONVERTED_STR_ARRAY:
     DATA_PATH = FILE_TO_BE_CONVERTED
     # please do pass header=None here, otherwise the first row is deemed as header.
     csv = pandas.read_csv(FILE_TO_BE_CONVERTED, header=None).values
-    # print(type(csv))
-    # print(csv.shape)
-    # print(csv.shape[0])
     num_images = csv.shape[0]
     arrs_images = []
     arrs_labels = []
     for row in csv:
         features, label = row[:-1], row[-1]
-        # print('====---1')
-        # print(features)
-        # print(features.shape)
-        # print(type(features))
         reshaped_features = features.reshape(RESHAPE, RESHAPE, depth)
-        # print('====---2')
-        # print(reshaped_features)
-        # print(reshaped_features.shape)
-        # print(type(reshaped_features))
         arrs_images.append(reshaped_features)
         arrs_labels.append(label)
     res_images = np.concatenate([arr[np.newaxis] for arr in arrs_images])
     images = res_images
-    # print(images.shape)
-    # print(type(images))
     res_labels = np.concatenate([arr[np.newaxis] for arr in arrs_labels])
     labels = res_labels
-    # print(labels.shape)
-    # print(type(labels))
-    # images of size [number_of_images, height, width, channels]
 
     shape = (RESHAPE, RESHAPE, depth)
     with tf.python_io.TFRecordWriter(TFRecord_OUTPUT) as tfrecord_writer:
@@ -132,7 +116,7 @@ for x in FILE_TO_BE_CONVERTED_STR_ARRAY:
                         png_string, 'png'.encode(), RESHAPE, RESHAPE,
                         labels[j])
                     tfrecord_writer.write(example.SerializeToString())
-    # Finally, write the labels file:
+    # write label file
     labels_to_class_names = dict(zip(range(len(_CLASS_NAMES)), _CLASS_NAMES))
     dataset_utils.write_label_file(labels_to_class_names, dataset_dir)
     print('\nFinished converting the fast depth coding dataset!')

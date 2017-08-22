@@ -1,7 +1,7 @@
-# ------------------------------------------------------------------------------
+# ==============================================================================
 # Author: Pharrell_WANG
 # Date: 2017/6/28
-# ------------------------------------------------------------------------------
+# ==============================================================================
 import os
 
 homedir = os.environ['HOME']
@@ -59,7 +59,5 @@ for INPUT_FILE in INPUT_LIST:
     with open(OUTPUT_FILE, 'w') as w:
         for input_file in INPUT_FILE:
             with open(input_file, 'r') as r:
-                # cnt = 0
                 for num, line in enumerate(r):
-                    # cnt += 1
                     w.write(line)
