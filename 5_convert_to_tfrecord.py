@@ -53,8 +53,8 @@ homedir = os.environ['HOME']
 # --- if you want to see the extra output from console, toggle it to true
 VERBOSE = False
 
-RESHAPE = 16
-depth = 1
+RESHAPE = 32
+depth = 3
 image_size = RESHAPE
 # parameters to adjust pharrell >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -88,7 +88,12 @@ for x in FILE_TO_BE_CONVERTED_STR_ARRAY:
     arrs_labels = []
     for row in csv:
         features, label = row[:-1], row[-1]
-        reshaped_features = features.reshape(RESHAPE, RESHAPE, depth)
+        reshaped_features = features.reshape(RESHAPE, RESHAPE)
+
+        reshaped_features = np.repeat(reshaped_features[:, :, np.newaxis], 3,
+                                      axis=2)
+
+        reshaped_features = reshaped_features.astype(np.uint8)
         arrs_images.append(reshaped_features)
         arrs_labels.append(label)
     res_images = np.concatenate([arr[np.newaxis] for arr in arrs_images])
@@ -105,15 +110,16 @@ for x in FILE_TO_BE_CONVERTED_STR_ARRAY:
             with tf.Session('') as sess:
                 for j in range(num_images):
                     sys.stdout.write(
-                        '\r>> Converting block data (depth block/image) %d/%d' % (
-                            j + 1, num_images))
+                        '\r>> Converting %s (depth block/image) %d/%d' % (x,
+                                                                          j + 1,
+                                                                          num_images))
                     sys.stdout.flush()
 
                     png_string = sess.run(encoded_png,
                                           feed_dict={image: images[j]})
 
                     example = dataset_utils.image_to_tfexample(
-                        png_string, 'png'.encode(), RESHAPE, RESHAPE,
+                        png_string, b'png', RESHAPE, RESHAPE,
                         labels[j])
                     tfrecord_writer.write(example.SerializeToString())
     # write label file

@@ -26,6 +26,7 @@ from __future__ import print_function
 import tensorflow as tf
 import os
 import pandas
+import numpy as np
 import matplotlib.pyplot as plt
 
 homedir = os.environ['HOME']
@@ -115,13 +116,19 @@ def main(_):
             counter += 1
             if counter <= 48:
                 features = features.reshape(RESHAPE, RESHAPE)
+
+                features = np.repeat(features[:, :, np.newaxis], 3, axis=2)
+
+                features = features.astype(np.uint8)
+
                 if USE_SUBPLOTS:
                     fig, (ax0, ax1) = plt.subplots(1, 2)
                     ax0.imshow(features, cmap='gray')
                     plt.show()
                 else:
                     ax = fig.add_subplot(6, 8, counter)
-                    ax.imshow(features, cmap='gray', vmin=0, vmax=255)
+                    # ax.imshow(features, cmap='gray', vmin=0, vmax=255)
+                    ax.imshow(features)
             else:
                 break
     plt.axis('off')
