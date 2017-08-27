@@ -98,7 +98,7 @@ def main(_):
 
     FILE = CSV_FILES_FOR_VISUAL[INDEX]
 
-    csv = pandas.read_csv(FILE, nrows=40000).values
+    csv = pandas.read_csv(FILE, skiprows=24400, nrows=40000).values
     print(FILE)
     counter = 0
     fig = plt.figure(figsize=(20, 26), dpi=70)

@@ -8,43 +8,8 @@ import os
 
 # The names of the classes.
 _CLASS_NAMES = [
-    'planar',
-    'DC',
-    'ANGULAR 2',
-    'ANGULAR 3',
-    'ANGULAR 4',
-    'ANGULAR 5',
-    'ANGULAR 6',
-    'ANGULAR 7',
-    'ANGULAR 8',
-    'ANGULAR 9',
-    'ANGULAR 10',
-    'ANGULAR 11',
-    'ANGULAR 12',
-    'ANGULAR 13',
-    'ANGULAR 14',
-    'ANGULAR 15',
-    'ANGULAR 16',
-    'ANGULAR 17',
-    'ANGULAR 18',
-    'ANGULAR 19',
-    'ANGULAR 20',
-    'ANGULAR 21',
-    'ANGULAR 22',
-    'ANGULAR 23',
-    'ANGULAR 24',
-    'ANGULAR 25',
-    'ANGULAR 26',
-    'ANGULAR 27',
-    'ANGULAR 28',
-    'ANGULAR 29',
-    'ANGULAR 30',
-    'ANGULAR 31',
-    'ANGULAR 32',
-    'ANGULAR 33',
-    'ANGULAR 34',
-    'DMM 1',
-    'DMM 4',
+    'homo',
+    'edge'
 ]
 
 homedir = os.environ['HOME']
@@ -58,12 +23,12 @@ depth = 3
 image_size = RESHAPE
 # parameters to adjust pharrell >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-TRAINING = homedir + '/data/step3_output/%sx%s/data_for_training/train_%sx%s.csv' % (
-    RESHAPE, RESHAPE, RESHAPE, RESHAPE)
-TESTING = homedir + '/data/step3_output/%sx%s/data_for_testing/test_%sx%s.csv' % (
-    RESHAPE, RESHAPE, RESHAPE, RESHAPE)
-VALIDATING = homedir + '/data/step3_output/%sx%s/data_for_validating/validate_%sx%s.csv' % (
-    RESHAPE, RESHAPE, RESHAPE, RESHAPE)
+TRAINING = homedir + '/data/two_classes/%sx%s_train.csv' % (
+    RESHAPE, RESHAPE)
+TESTING = homedir + '/data/two_classes/%sx%s_test.csv' % (
+    RESHAPE, RESHAPE)
+VALIDATING = homedir + '/data/two_classes/%sx%s_validation.csv' % (
+    RESHAPE, RESHAPE)
 
 FILE_TO_BE_CONVERTED_STR_ARRAY = ['training', 'testing', 'validating']
 for x in FILE_TO_BE_CONVERTED_STR_ARRAY:
@@ -75,9 +40,9 @@ for x in FILE_TO_BE_CONVERTED_STR_ARRAY:
     elif x == 'validating':
         FILE_TO_BE_CONVERTED = VALIDATING
 
-    dataset_dir = homedir + '/data/TFRecords/'
+    dataset_dir = homedir + '/data/two_classes/tfrecords/'
 
-    TFRecord_OUTPUT = homedir + '/data/TFRecords/%sx%s_%s.tfrecord' % (
+    TFRecord_OUTPUT = homedir + '/data/two_classes/tfrecords/%sx%s_%s.tfrecord' % (
         RESHAPE, RESHAPE, x)
 
     DATA_PATH = FILE_TO_BE_CONVERTED
