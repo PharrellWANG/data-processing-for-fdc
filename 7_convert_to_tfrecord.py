@@ -18,14 +18,14 @@ homedir = os.environ['HOME']
 # --- if you want to see the extra output from console, toggle it to true
 VERBOSE = False
 
-RESHAPE = 32
+RESHAPE = 8
 depth = 3
 image_size = RESHAPE
 # parameters to adjust pharrell >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-TRAINING = homedir + '/data/two_classes/32x32_homo_edge/train.csv'
-TESTING = homedir + '/data/two_classes/32x32_homo_edge/test.csv'
-VALIDATING = homedir + '/data/two_classes/32x32_homo_edge/validation.csv'
+TRAINING = homedir + '/data/two_classes/08x08_homo_edge/train.csv'
+TESTING = homedir + '/data/two_classes/08x08_homo_edge/test.csv'
+VALIDATING = homedir + '/data/two_classes/08x08_homo_edge/validation.csv'
 
 FILE_TO_BE_CONVERTED_STR_ARRAY = ['training', 'testing', 'validating']
 for x in FILE_TO_BE_CONVERTED_STR_ARRAY:
@@ -39,7 +39,7 @@ for x in FILE_TO_BE_CONVERTED_STR_ARRAY:
 
     dataset_dir = homedir + '/data/two_classes/tfrecords/'
 
-    TFRecord_OUTPUT = homedir + '/data/two_classes/tfrecords/%sx%s_%s.tfrecord' % (
+    TFRecord_OUTPUT = homedir + '/data/two_classes/tfrecords/0%sx0%s_%s.tfrecord' % (
         RESHAPE, RESHAPE, x)
 
     DATA_PATH = FILE_TO_BE_CONVERTED
