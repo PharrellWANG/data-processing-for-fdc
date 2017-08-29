@@ -32,8 +32,8 @@ import matplotlib.pyplot as plt
 homedir = os.environ['HOME']
 CSV_FILES_FOR_VISUAL = [homedir + '/data/step2_output/size_08_files.csv',
                         homedir + '/data/step2_output/size_16_files.csv',
-                        # homedir + '/data/step2_output/size_32_files.csv',
-                        '/Users/Pharrell_WANG/data/two_classes/32x32_train.csv',
+                        homedir + '/data/step2_output/size_32_files.csv',
+                        # '/Users/Pharrell_WANG/data/two_classes/32x32_train.csv',
                         homedir + '/data/step2_output/size_64_files.csv'
                         ]
 
@@ -49,6 +49,16 @@ tf.app.flags.DEFINE_string(
     None,
     'The number of the mode to visualize, one of the integers '
     'within the range of [0, 36].')
+
+tf.app.flags.DEFINE_string(
+    'skip_rows',
+    0,
+    'rows to skip when reading csv file, default 0')
+
+tf.app.flags.DEFINE_string(
+    'rows_to_read',
+    4000,
+    'rows to read when reading csv file, default 4000')
 
 USE_SUBPLOTS = False
 
@@ -70,6 +80,8 @@ def main(_):
     print('-----------------------------------------------------')
     print(' # 1. block_size must be one of 8, 16, 32, 64')
     print(' # 2. mode must be one of the integers within [0,36]')
+    print(' # 3. skip_rows')
+    print(' # 4. rows_to_read')
     print('-----------------------------------------------------')
     print('')
     print('                 END of Hints')
@@ -99,7 +111,7 @@ def main(_):
 
     FILE = CSV_FILES_FOR_VISUAL[INDEX]
 
-    csv = pandas.read_csv(FILE, skiprows=41400, nrows=40000).values
+    csv = pandas.read_csv(FILE, skiprows=int(FLAGS.skip_rows), nrows=int(FLAGS.rows_to_read)).values
     print(FILE)
     counter = 0
     fig = plt.figure(figsize=(20, 26), dpi=70)
