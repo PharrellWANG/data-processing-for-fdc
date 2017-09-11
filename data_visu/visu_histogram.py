@@ -11,7 +11,7 @@ E.g., You can visu size 8x8, mode 2 for video sequence Balloons.
 Usage:
 ```shell
 
-$ python visu_histogram.py --file='balloons/file_name.csv' --size='8x8' --mode='0' --seq='balloon'
+$ python visu_histogram.py --file='balloons/file_name.csv' --seq='balloon' --size='8x8' --mode='0'
 ```
 """
 from __future__ import absolute_import
@@ -43,7 +43,7 @@ tf.app.flags.DEFINE_string(
 tf.app.flags.DEFINE_string(
     'seq',
     'balloons',
-    '[only for display in fig] sequence name')
+    'sequence name, used as directory name')
 
 tf.app.flags.DEFINE_string(
     'mode',
@@ -92,7 +92,7 @@ def main(_):
 
     plt.xlabel('Edge Strength', fontsize=10)
     plt.ylabel('No. of Samples', fontsize=10)
-    fig.savefig(homedir + '/Desktop/' + '%s.pdf' % FLAGS.file)
+    fig.savefig(homedir + '/PycharmProjects/data-processing-for-fdc/sample_data/%s/pdfs/' % FLAGS.seq + '%s.pdf' % FLAGS.file)
 
     plt.show()
 
