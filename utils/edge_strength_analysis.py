@@ -12,7 +12,7 @@ import datetime
 from collections import OrderedDict
 
 
-def edge_analyzer(INPUT_FILE):
+def edge_analyzer(INPUT_FILE, SEQUENCE):
     homedir = os.environ['HOME']
     start_timestamp = datetime.datetime.now()
     print('=================================================')
@@ -107,6 +107,8 @@ def edge_analyzer(INPUT_FILE):
     csv = pd.read_csv(INPUT_FILE, header=None).values
     print('total num of rows in csv file:')
     print(csv.shape[0])
+    print('total elements in a row:')
+    print(csv.shape[1])
 
     if csv.shape[1] == 65:
         RESHAPE = 8
@@ -123,8 +125,8 @@ def edge_analyzer(INPUT_FILE):
             cnt += 1
             sys.stdout.write(
                 '\r>> processing line: %d / %d' % (cnt, csv.shape[0]))
-            sys.stdout.write(
-                '\r>> processing percent: %d ' % round(cnt / csv.shape[0], 3))
+            # sys.stdout.write(
+            #     '\r>> processing percent: %d ' % round(cnt / csv.shape[0], 3))
             if line[-3:-2] == ',':
                 # print("yes, it is a comma.===============!!~~~~~~~~")
                 last_char_in_line = int(line[-2:-1])
@@ -503,8 +505,9 @@ def edge_analyzer(INPUT_FILE):
 
         for x in range(37):
             df = pd.DataFrame(strength_dict['edge_strength_of_mode_%02d' % x])
+            # SEQUENCE [balloons, ghost_fly, kendo, newspaper, poznan_hall_1920x1088, poznan_street_1920x1088, shark_1920x1088, undo_dancer_1920x1088 ]')
             df.to_csv(
-                homedir + '/PycharmProjects/data-processing-for-fdc/sample_data/histogram_data_for_mode_%02d.csv' % x,
+                homedir + '/PycharmProjects/data-processing-for-fdc/sample_data/%s/histogram_data_for_mode_%02d.csv' % (str(SEQUENCE), x),
                 index=False)
 
         print('=================================================')
