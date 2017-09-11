@@ -87,8 +87,12 @@ def main(_):
     ax.set_xlim(left[0], right[-1])
     ax.set_ylim(bottom.min(), top.max())
     fig.suptitle(
-        "Visualization of Edge Strength (Size: %s, Mode: %s, Sequence: %s" % (
-            FLAGS.size, FLAGS.mode, FLAGS.seq))
+        "Visualization of Edge Strength \n Sequence: %s , Block size: %s , Mode: %s" % (
+            FLAGS.seq, FLAGS.size, FLAGS.mode), fontsize=10)
+
+    plt.xlabel('Edge Strength', fontsize=10)
+    plt.ylabel('No. of Samples', fontsize=10)
+    fig.savefig(homedir + '/Desktop/' + '%s.pdf' % FLAGS.file)
 
     plt.show()
 
