@@ -8,7 +8,8 @@ Usage:
 ```shell
 
 $ python edge_analyzing.py --sequence='balloons' \
-    --file='/data/step2_output/size_16_files.csv'
+    --file='/data/step2_output/size_16_files.csv' \
+    --sequence='balloons'
 
 Note:
     skip size_0.csv, since 64x64 is not considered for

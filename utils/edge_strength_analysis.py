@@ -21,7 +21,7 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
     print(start_timestamp)
     print('++++++++++++++++++++')
     print('Name of the data file: ' + str(INPUT_FILE))
-    x = OrderedDict()
+    x_dict = OrderedDict()
     strength_dict = OrderedDict()
 
     mode_0 = 0
@@ -100,8 +100,8 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
     edge_strength_of_mode_36 = 0
 
     d = {}
-    for x in range(37):
-        d['strength_data_for_mode_%02d' % x] = np.array([])
+    for item in range(37):
+        d['strength_data_for_mode_%02d' % item] = np.array([])
 
     RESHAPE = 8  # INIT
     csv = pd.read_csv(INPUT_FILE, header=None).values
@@ -161,13 +161,13 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
                         features[i + 1][j] - \
                         features[i + 1][j + 1]
                     strength = horizontal_strength ** 2 + vertical_strength ** 2
-
-                    data = np.append(data, np.array([strength]))
                     # df = pd.DataFrame(data)
                     # df.to_csv(
                     #     '/Users/pharrell_wang/PycharmProjects/data-processing-for-fdc/sample_data/save_histogram_data.csv',
                     #     index=False)
                     total_strength += strength
+
+            data = np.append(data, np.array([total_strength]))
 
             if mode == 0:
                 mode_0 += 1
@@ -355,48 +355,48 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
 
-        x['mode__0'] = mode_0
-        x['mode__1'] = mode_1
-        x['mode__2'] = mode_2
-        x['mode__3'] = mode_3
-        x['mode__4'] = mode_4
-        x['mode__5'] = mode_5
-        x['mode__6'] = mode_6
-        x['mode__7'] = mode_7
-        x['mode__8'] = mode_8
-        x['mode__9'] = mode_9
-        x['mode_10'] = mode_10
-        x['mode_11'] = mode_11
-        x['mode_12'] = mode_12
-        x['mode_13'] = mode_13
-        x['mode_14'] = mode_14
-        x['mode_15'] = mode_15
-        x['mode_16'] = mode_16
-        x['mode_17'] = mode_17
-        x['mode_18'] = mode_18
-        x['mode_19'] = mode_19
-        x['mode_20'] = mode_20
-        x['mode_21'] = mode_21
-        x['mode_22'] = mode_22
-        x['mode_23'] = mode_23
-        x['mode_24'] = mode_24
-        x['mode_25'] = mode_25
-        x['mode_26'] = mode_26
-        x['mode_27'] = mode_27
-        x['mode_28'] = mode_28
-        x['mode_29'] = mode_29
-        x['mode_30'] = mode_30
-        x['mode_31'] = mode_31
-        x['mode_32'] = mode_32
-        x['mode_33'] = mode_33
-        x['mode_34'] = mode_34
-        x['mode_35'] = mode_35
-        x['mode_36'] = mode_36
+        x_dict['mode__0'] = mode_0
+        x_dict['mode__1'] = mode_1
+        x_dict['mode__2'] = mode_2
+        x_dict['mode__3'] = mode_3
+        x_dict['mode__4'] = mode_4
+        x_dict['mode__5'] = mode_5
+        x_dict['mode__6'] = mode_6
+        x_dict['mode__7'] = mode_7
+        x_dict['mode__8'] = mode_8
+        x_dict['mode__9'] = mode_9
+        x_dict['mode_10'] = mode_10
+        x_dict['mode_11'] = mode_11
+        x_dict['mode_12'] = mode_12
+        x_dict['mode_13'] = mode_13
+        x_dict['mode_14'] = mode_14
+        x_dict['mode_15'] = mode_15
+        x_dict['mode_16'] = mode_16
+        x_dict['mode_17'] = mode_17
+        x_dict['mode_18'] = mode_18
+        x_dict['mode_19'] = mode_19
+        x_dict['mode_20'] = mode_20
+        x_dict['mode_21'] = mode_21
+        x_dict['mode_22'] = mode_22
+        x_dict['mode_23'] = mode_23
+        x_dict['mode_24'] = mode_24
+        x_dict['mode_25'] = mode_25
+        x_dict['mode_26'] = mode_26
+        x_dict['mode_27'] = mode_27
+        x_dict['mode_28'] = mode_28
+        x_dict['mode_29'] = mode_29
+        x_dict['mode_30'] = mode_30
+        x_dict['mode_31'] = mode_31
+        x_dict['mode_32'] = mode_32
+        x_dict['mode_33'] = mode_33
+        x_dict['mode_34'] = mode_34
+        x_dict['mode_35'] = mode_35
+        x_dict['mode_36'] = mode_36
 
         veri_1 = 0
         print('=================================================')
         print("COUNTING START...")
-        for m, n in x.items():
+        for m, n in x_dict.items():
             print(str(m) + " :   " + str(
                 n) + '   <<------ ||-------->>      ' + str(
                 m) + " / total (%) :   " + str(
@@ -408,7 +408,7 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
             "Sum of the percentages (output should be nearly equal to 1 or 0.999999..) : " + str(
                 veri_1))
 
-        sorted_x = OrderedDict(sorted(x.items(), key=lambda t: t[1]))
+        sorted_x = OrderedDict(sorted(x_dict.items(), key=lambda t: t[1]))
 
         print("")
         print('Below are the sorted list of all the modes (smallest first)')
@@ -503,11 +503,12 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
         strength_dict[
             'edge_strength_of_mode_36'] = edge_strength_of_mode_36 / mode_36
 
-        for x in range(37):
-            df = pd.DataFrame(strength_dict['edge_strength_of_mode_%02d' % x])
+        for item in range(37):
+            df = pd.DataFrame(d['strength_data_for_mode_%02d' % item])
             # SEQUENCE [balloons, ghost_fly, kendo, newspaper, poznan_hall_1920x1088, poznan_street_1920x1088, shark_1920x1088, undo_dancer_1920x1088 ]')
             df.to_csv(
-                homedir + '/PycharmProjects/data-processing-for-fdc/sample_data/%s/size_%s_histogram_data_for_mode_%02d.csv' % (str(SEQUENCE), str(RESHAPE), x),
+                homedir + '/PycharmProjects/data-processing-for-fdc/sample_data/%s/size_%s_histogram_data_for_mode_%02d.csv' % (
+                str(SEQUENCE), str(RESHAPE), item),
                 index=False)
 
         print('=================================================')
@@ -533,4 +534,4 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
         print(time_duration)
         print('++++++++++++++++++++')
 
-        return x, strength_dict
+        return x_dict, strength_dict
