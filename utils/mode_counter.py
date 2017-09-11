@@ -3,6 +3,7 @@
 # Date: 2017/6/28
 # ==============================================================================
 
+import sys
 from collections import OrderedDict
 
 
@@ -53,6 +54,8 @@ def mode_counter(INPUT_FILE):
         cnt = 0
         for num, line in enumerate(r):
             cnt += 1
+            sys.stdout.write(
+                '\r>> processing line: %d' % cnt)
             if line[-3:-2] == ',':
                 # print("yes, it is a comma.===============!!~~~~~~~~")
                 last_char_in_line = int(line[-2:-1])

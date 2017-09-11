@@ -5,12 +5,18 @@
 
 import sys
 import pandas
+import datetime
 
 from collections import OrderedDict
 
 
 def edge_analyzer(INPUT_FILE):
+    start_timestamp = datetime.datetime.now()
     print('=================================================')
+    print('++++++++++++++++++++')
+    print('start at: ')
+    print(start_timestamp)
+    print('++++++++++++++++++++')
     print('Name of the data file: ' + str(INPUT_FILE))
     x = OrderedDict()
     strength_dict = OrderedDict()
@@ -90,17 +96,23 @@ def edge_analyzer(INPUT_FILE):
     edge_strength_of_mode_35 = 0
     edge_strength_of_mode_36 = 0
 
-    csv = pandas.read_csv(INPUT_FILE, header=None, nrows=1).values
-    assert (csv.shape[0] == 1)
-    # print(csv.shape[1]) 257
+    RESHAPE = 0  # INIT
+    csv = pandas.read_csv(INPUT_FILE, header=None).values
+    print('total num of rows in csv file:')
+    print(csv.shape[0])
+
     if csv.shape[1] == 257:
         RESHAPE = 16
+    elif csv.shape[1] == 1025:
+        RESHAPE = 32
+    assert (csv.shape[1] == RESHAPE * RESHAPE + 1)
+
     with open(INPUT_FILE, 'r') as r:
         cnt = 0
         for num, line in enumerate(r):
             cnt += 1
             sys.stdout.write(
-                '\r>> processing line: %d' % cnt)
+                '\r>> processing line: %d / %d' % (cnt, csv.shape[0]))
             if line[-3:-2] == ',':
                 # print("yes, it is a comma.===============!!~~~~~~~~")
                 last_char_in_line = int(line[-2:-1])
@@ -112,33 +124,30 @@ def edge_analyzer(INPUT_FILE):
 
             # edge strength analysis
             # read one line every time
-            csv = pandas.read_csv(INPUT_FILE, header=None, skiprows=cnt - 1,
-                                  nrows=1).values
-            assert (csv.shape[0] == 1)
-            assert (csv.shape[1] == RESHAPE * RESHAPE + 1)
             total_strength = 0
+
+            row = csv[cnt-1]
             # local_counter = 0
-            for row in csv:  # actually only one row
-                features, label = row[:-1], row[-1]
-                features = features.reshape(RESHAPE, RESHAPE)
-                for i in range(RESHAPE - 1):
-                    for j in range(RESHAPE - 1):
-                        # local_counter += 1
-                        # sys.stdout.write(
-                        #     '\r>> processing %d/%d' % (local_counter,
-                        #                                RESHAPE ** 2))
-                        horizontal_strength = \
-                            features[i][j] + \
-                            features[i + 1][j] - \
-                            features[i][j + 1] - \
-                            features[i + 1][j + 1]
-                        vertical_strength = \
-                            features[i][j] + \
-                            features[i][j + 1] - \
-                            features[i + 1][j] - \
-                            features[i + 1][j + 1]
-                        strength = horizontal_strength ** 2 + vertical_strength ** 2
-                        total_strength += strength
+            features, label = row[:-1], row[-1]
+            features = features.reshape(RESHAPE, RESHAPE)
+            for i in range(RESHAPE - 1):
+                for j in range(RESHAPE - 1):
+                    # local_counter += 1
+                    # sys.stdout.write(
+                    #     '\r>> processing %d/%d' % (local_counter,
+                    #                                RESHAPE ** 2))
+                    horizontal_strength = \
+                        features[i][j] + \
+                        features[i + 1][j] - \
+                        features[i][j + 1] - \
+                        features[i + 1][j + 1]
+                    vertical_strength = \
+                        features[i][j] + \
+                        features[i][j + 1] - \
+                        features[i + 1][j] - \
+                        features[i + 1][j + 1]
+                    strength = horizontal_strength ** 2 + vertical_strength ** 2
+                    total_strength += strength
 
             if mode == 0:
                 mode_0 += 1
@@ -404,38 +413,27 @@ def edge_analyzer(INPUT_FILE):
         strength_dict[
             'edge_strength_of_mode_36'] = edge_strength_of_mode_36 / mode_36
 
-        veri_1 = 0
         print('=================================================')
         print("COUNTING START...")
         for m, n in strength_dict.items():
-            print(str(m) + " :   " + str(
-                n) + '   <<------ ||-------->>      ' + str(
-                m) + " / total (%) :   " + str(
-                float(n) / float(cnt)))
-            veri_1 += float(n) / float(cnt)
-
-        print('*** Verification ***')
-        print(
-            "Sum of the percentages (output should be nearly equal to 1 or 0.999999..) : " + str(
-                veri_1))
-
+            print(str(m) + " :   " + str(n))
         sorted_x = OrderedDict(
             sorted(strength_dict.items(), key=lambda t: t[1]))
 
-        print("")
         print('Below are the sorted list of all the modes (smallest first)')
-        veri_2 = 0
         for m, n in sorted_x.items():
-            print(str(m) + " :   " + str(n) + '  <<------ ||-------->> ' + str(
-                m) + " / total (%) :   " + str(
-                float(n) / float(cnt)))
-            veri_2 += float(n) / float(cnt)
-
-        print('===================')
-        print('*** Verification ***')
-        print(
-            "Sum of the percentages (output should be nearly equal to 1 or 0.999999..) : " + str(
-                veri_2))
+            print(str(m) + " :   " + str(n))
         print('=================================================')
+        end_timestamp = datetime.datetime.now()
+
+        time_duration = end_timestamp - start_timestamp
+
+        print('++++++++++++++++++++')
+        print('end at: ')
+        print(end_timestamp)
+        print('++++++++++++++++++++')
+        print('The time spent is:')
+        print(time_duration)
+        print('++++++++++++++++++++')
 
         return x, strength_dict
