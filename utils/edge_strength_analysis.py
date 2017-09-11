@@ -123,6 +123,8 @@ def edge_analyzer(INPUT_FILE):
             cnt += 1
             sys.stdout.write(
                 '\r>> processing line: %d / %d' % (cnt, csv.shape[0]))
+            sys.stdout.write(
+                '\r>> processing percent: %d ' % round(cnt / csv.shape[0], 3))
             if line[-3:-2] == ',':
                 # print("yes, it is a comma.===============!!~~~~~~~~")
                 last_char_in_line = int(line[-2:-1])
