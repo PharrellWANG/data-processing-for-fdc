@@ -96,12 +96,14 @@ def edge_analyzer(INPUT_FILE):
     edge_strength_of_mode_35 = 0
     edge_strength_of_mode_36 = 0
 
-    RESHAPE = 0  # INIT
+    RESHAPE = 8  # INIT
     csv = pandas.read_csv(INPUT_FILE, header=None).values
     print('total num of rows in csv file:')
     print(csv.shape[0])
 
-    if csv.shape[1] == 257:
+    if csv.shape[1] == 65:
+        RESHAPE = 8
+    elif csv.shape[1] == 257:
         RESHAPE = 16
     elif csv.shape[1] == 1025:
         RESHAPE = 32
