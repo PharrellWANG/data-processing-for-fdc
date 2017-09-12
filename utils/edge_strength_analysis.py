@@ -183,7 +183,7 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
                 ave = np.mean(data)
                 data = np.array([ave])
 
-            # !!!! it seems that block strength ``ave`` seldom larger than 20000 except in DMM1
+            # !!!! it seems that block strengh
 
             assert (data.ndim == 1)
 

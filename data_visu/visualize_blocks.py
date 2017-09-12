@@ -34,12 +34,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 homedir = os.environ['HOME']
-CSV_FILES_FOR_VISUAL = [homedir + '/data/step2_output/size_08_files.csv',
-                        homedir + '/data/step2_output/size_16_files.csv',
-                        homedir + '/data/step2_output/size_32_files.csv',
-                        # '/Users/Pharrell_WANG/data/two_classes/32x32_train.csv',
-                        homedir + '/data/step2_output/size_64_files.csv'
-                        ]
+CSV_FILES_FOR_VISUAL = [
+    # homedir + '/data/step2_output/size_08_files.csv',
+    homedir + '/data/smooth_removed/size_08_files.csv',
+    homedir + '/data/step2_output/size_16_files.csv',
+    homedir + '/data/step2_output/size_32_files.csv',
+    # '/Users/Pharrell_WANG/data/two_classes/32x32_train.csv',
+    homedir + '/data/step2_output/size_64_files.csv'
+]
 
 FLAGS = tf.app.flags.FLAGS
 
@@ -115,7 +117,8 @@ def main(_):
 
     FILE = CSV_FILES_FOR_VISUAL[INDEX]
 
-    csv = pandas.read_csv(FILE, skiprows=int(FLAGS.skip_rows), nrows=int(FLAGS.rows_to_read)).values
+    csv = pandas.read_csv(FILE, skiprows=int(FLAGS.skip_rows),
+                          nrows=int(FLAGS.rows_to_read)).values
     print(FILE)
     counter = 0
     fig = plt.figure(figsize=(20, 26), dpi=70)
