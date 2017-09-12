@@ -65,7 +65,7 @@ def main(_):
     # print(np_array_from_csv_file.shape)
     # print(np_array_from_csv_file.ndim)
     # n, bins = np.histogram(data, 100)
-    n, bins = np.histogram(np_array_from_csv_file, 50000)
+    n, bins = np.histogram(np_array_from_csv_file, 20)
 
     # get the corners of the rectangles for the histogram
     left = np.array(bins[:-1])
@@ -88,7 +88,7 @@ def main(_):
     ax.set_xlim(left[0], right[-1])
     ax.set_ylim(bottom.min(), top.max())
     fig.suptitle(
-        "Visualization of Edge Strength \n Sequence: %s , Block size: %s , Mode: %s" % (
+        "Distribution of Edge Strength\n Sequence: %s , Block size: %s , Mode: %s" % (
             FLAGS.seq, FLAGS.size, FLAGS.mode), fontsize=10)
 
     plt.xlabel('Edge Strength', fontsize=10)
