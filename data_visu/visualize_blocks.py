@@ -18,6 +18,10 @@ $ python visualize_blocks.py \
 
 $ python visualize_blocks.py \
     --block_size=64
+
+sample code:
+python data_visu/visualize_blocks.py --block_size=32 --mode=35 --skip_rows=20 --rows_to_read=4000
+
 ```
 """
 from __future__ import absolute_import
