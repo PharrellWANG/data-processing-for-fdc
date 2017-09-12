@@ -161,197 +161,215 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
                         features[i + 1][j] - \
                         features[i + 1][j + 1]
                     strength = horizontal_strength ** 2 + vertical_strength ** 2
+                    data = np.append(data, np.array([strength]))  # total strength of a block (or you can say a line in the csv file)
                     # df = pd.DataFrame(data)
                     # df.to_csv(
                     #     '/Users/pharrell_wang/PycharmProjects/data-processing-for-fdc/sample_data/save_histogram_data.csv',
                     #     index=False)
                     total_strength += strength
 
-            data = np.append(data, np.array([total_strength]))
+            assert (data.ndim == 1)
+            # top RESHAPE*2 && non-zero average.
+            # step1: top RESHAPE*2 values in the numpy arrary
+            top_k = data[np.argsort(data)][data.size - RESHAPE * 2:]
+            assert (top_k.ndim == 1)
+            # step2: non-zero values (because sometimes the edge length can be short. We only want the sharpness. We do not want smooth regions to affect the sharpness.)
+            data = top_k[top_k.nonzero()]
+            data = data[np.where(data > 8)]  # for [[2, 0], [0, 0]], i exclude it from the concept of sharp
+            if data.size == 0:  # all the strength are zero. (that is to say , it is the DC mode)
+                ave = 0
+                data = np.array([0])
+            else:
+                ave = np.mean(data)
+                data = np.array([ave])
+
+            # !!!! it seems that block strength ``ave`` seldom larger than 20000 except in DMM1
+
+            assert (data.ndim == 1)
 
             if mode == 0:
                 mode_0 += 1
-                edge_strength_of_mode_0 += total_strength
+                edge_strength_of_mode_0 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 1:
                 mode_1 += 1
-                edge_strength_of_mode_1 += total_strength
+                edge_strength_of_mode_1 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 2:
                 mode_2 += 1
-                edge_strength_of_mode_2 += total_strength
+                edge_strength_of_mode_2 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 3:
                 mode_3 += 1
-                edge_strength_of_mode_3 += total_strength
+                edge_strength_of_mode_3 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 4:
                 mode_4 += 1
-                edge_strength_of_mode_4 += total_strength
+                edge_strength_of_mode_4 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 5:
                 mode_5 += 1
-                edge_strength_of_mode_5 += total_strength
+                edge_strength_of_mode_5 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 6:
                 mode_6 += 1
-                edge_strength_of_mode_6 += total_strength
+                edge_strength_of_mode_6 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 7:
                 mode_7 += 1
-                edge_strength_of_mode_7 += total_strength
+                edge_strength_of_mode_7 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 8:
                 mode_8 += 1
-                edge_strength_of_mode_8 += total_strength
+                edge_strength_of_mode_8 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 9:
                 mode_9 += 1
-                edge_strength_of_mode_9 += total_strength
+                edge_strength_of_mode_9 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 10:
                 mode_10 += 1
-                edge_strength_of_mode_10 += total_strength
+                edge_strength_of_mode_10 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 11:
                 mode_11 += 1
-                edge_strength_of_mode_11 += total_strength
+                edge_strength_of_mode_11 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 12:
                 mode_12 += 1
-                edge_strength_of_mode_12 += total_strength
+                edge_strength_of_mode_12 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 13:
                 mode_13 += 1
-                edge_strength_of_mode_13 += total_strength
+                edge_strength_of_mode_13 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 14:
                 mode_14 += 1
-                edge_strength_of_mode_14 += total_strength
+                edge_strength_of_mode_14 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 15:
                 mode_15 += 1
-                edge_strength_of_mode_15 += total_strength
+                edge_strength_of_mode_15 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 16:
                 mode_16 += 1
-                edge_strength_of_mode_16 += total_strength
+                edge_strength_of_mode_16 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 17:
                 mode_17 += 1
-                edge_strength_of_mode_17 += total_strength
+                edge_strength_of_mode_17 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 18:
                 mode_18 += 1
-                edge_strength_of_mode_18 += total_strength
+                edge_strength_of_mode_18 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 19:
                 mode_19 += 1
-                edge_strength_of_mode_19 += total_strength
+                edge_strength_of_mode_19 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 20:
                 mode_20 += 1
-                edge_strength_of_mode_20 += total_strength
+                edge_strength_of_mode_20 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 21:
                 mode_21 += 1
-                edge_strength_of_mode_21 += total_strength
+                edge_strength_of_mode_21 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 22:
                 mode_22 += 1
-                edge_strength_of_mode_22 += total_strength
+                edge_strength_of_mode_22 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 23:
                 mode_23 += 1
-                edge_strength_of_mode_23 += total_strength
+                edge_strength_of_mode_23 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 24:
                 mode_24 += 1
-                edge_strength_of_mode_24 += total_strength
+                edge_strength_of_mode_24 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 25:
                 mode_25 += 1
-                edge_strength_of_mode_25 += total_strength
+                edge_strength_of_mode_25 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 26:
                 mode_26 += 1
-                edge_strength_of_mode_26 += total_strength
+                edge_strength_of_mode_26 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 27:
                 mode_27 += 1
-                edge_strength_of_mode_27 += total_strength
+                edge_strength_of_mode_27 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 28:
                 mode_28 += 1
-                edge_strength_of_mode_28 += total_strength
+                edge_strength_of_mode_28 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 29:
                 mode_29 += 1
-                edge_strength_of_mode_29 += total_strength
+                edge_strength_of_mode_29 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 30:
                 mode_30 += 1
-                edge_strength_of_mode_30 += total_strength
+                edge_strength_of_mode_30 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 31:
                 mode_31 += 1
-                edge_strength_of_mode_31 += total_strength
+                edge_strength_of_mode_31 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 32:
                 mode_32 += 1
-                edge_strength_of_mode_32 += total_strength
+                edge_strength_of_mode_32 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 33:
                 mode_33 += 1
-                edge_strength_of_mode_33 += total_strength
+                edge_strength_of_mode_33 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 34:
                 mode_34 += 1
-                edge_strength_of_mode_34 += total_strength
+                edge_strength_of_mode_34 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 35:
                 mode_35 += 1
-                edge_strength_of_mode_35 += total_strength
+                edge_strength_of_mode_35 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
             elif mode == 36:
                 mode_36 += 1
-                edge_strength_of_mode_36 += total_strength
+                edge_strength_of_mode_36 += ave
                 d['strength_data_for_mode_%02d' % mode] = np.append(
                     d['strength_data_for_mode_%02d' % mode], data)
 
@@ -508,7 +526,7 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
             # SEQUENCE [balloons, ghost_fly, kendo, newspaper, poznan_hall_1920x1088, poznan_street_1920x1088, shark_1920x1088, undo_dancer_1920x1088 ]')
             df.to_csv(
                 homedir + '/PycharmProjects/data-processing-for-fdc/sample_data/%s/size_%s_histogram_data_for_mode_%02d.csv' % (
-                str(SEQUENCE), str(RESHAPE), item),
+                    str(SEQUENCE), str(RESHAPE), item),
                 index=False)
 
         print('=================================================')

@@ -7,9 +7,8 @@ r"""analyze the edge strength
 Usage:
 ```shell
 
-$ python edge_analyzing.py --sequence='balloons' \
-    --file='/data/step2_output/size_16_files.csv' \
-    --sequence='balloons'
+$
+python edge_analyzing.py --sequence='balloons' --file='/data/edge_strength_analyze/Balloons/cr_mixed_data_1.csv'
 
 Note:
     skip size_0.csv, since 64x64 is not considered for
