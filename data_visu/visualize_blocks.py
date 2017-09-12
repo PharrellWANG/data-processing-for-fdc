@@ -36,7 +36,7 @@ import matplotlib.pyplot as plt
 homedir = os.environ['HOME']
 CSV_FILES_FOR_VISUAL = [
     # homedir + '/data/step2_output/size_08_files.csv',
-    homedir + '/data/smooth_removed/size_08_files.csv',
+    homedir + '/data/smooth_removed/ave_90_size_08_files.csv',
     homedir + '/data/step2_output/size_16_files.csv',
     homedir + '/data/step2_output/size_32_files.csv',
     # '/Users/Pharrell_WANG/data/two_classes/32x32_train.csv',

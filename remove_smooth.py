@@ -10,7 +10,7 @@ import os
 
 homedir = os.environ['HOME']
 INFILE = homedir + '/data/step2_output/size_08_files.csv'
-OUTFILE = homedir + '/data/smooth_removed/size_08_files.csv'
+OUTFILE = homedir + '/data/smooth_removed/ave_90_size_08_files.csv'
 
 
 def remove_smooth(INPUT_FILE, OUTPUT_FILE):
@@ -94,10 +94,10 @@ def remove_smooth(INPUT_FILE, OUTPUT_FILE):
             else:
                 ave = np.mean(data)
 
-            if ave >= 50:
+            if ave >= 90:
                 new_cnt += 1
-                sys.stdout.write(
-                    '\r>> yes, write new line please: %d' % new_cnt)
+                # sys.stdout.write(
+                #     '\r>> yes, write new line please: %d' % new_cnt)
                 newline = line
                 w.write(newline)
 
