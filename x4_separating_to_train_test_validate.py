@@ -7,7 +7,7 @@ import os
 import datetime
 
 homedir = os.environ['HOME']
-ORIG = homedir + '/data/smooth_removed/28_classes__ave_90_size_08_files__after_grouping.csv'
+ORIG = homedir + '/data/smooth_removed/23_classes__ave_90_size_08_files__after_grouping.csv'
 TRAINING = homedir + '/data/smooth_removed/data/train_08x08.csv'
 TESTING = homedir + '/data/smooth_removed/data/test_08x08.csv'
 VALIDATING = homedir + '/data/smooth_removed/data/validation_08x08.csv'
@@ -35,11 +35,6 @@ VALIDATING19 = homedir + '/data/smooth_removed/data/validation_08x08_19.csv'
 VALIDATING20 = homedir + '/data/smooth_removed/data/validation_08x08_20.csv'
 VALIDATING21 = homedir + '/data/smooth_removed/data/validation_08x08_21.csv'
 VALIDATING22 = homedir + '/data/smooth_removed/data/validation_08x08_22.csv'
-VALIDATING23 = homedir + '/data/smooth_removed/data/validation_08x08_23.csv'
-VALIDATING24 = homedir + '/data/smooth_removed/data/validation_08x08_24.csv'
-VALIDATING25 = homedir + '/data/smooth_removed/data/validation_08x08_25.csv'
-VALIDATING26 = homedir + '/data/smooth_removed/data/validation_08x08_26.csv'
-VALIDATING27 = homedir + '/data/smooth_removed/data/validation_08x08_27.csv'
 
 
 def data_generator(ORIG, TRAINING, VALIDATING, TESTING,
@@ -66,9 +61,9 @@ def data_generator(ORIG, TRAINING, VALIDATING, TESTING,
 									 VALIDATING20,
 									 VALIDATING21,
 									 VALIDATING22,
-									 VALIDATING23,
-									 VALIDATING24,
-									 VALIDATING25,
+									 # VALIDATING23,
+									 # VALIDATING24,
+									 # VALIDATING25,
 									 # VALIDATING26,
 									 # VALIDATING27,
 									 ):
@@ -85,10 +80,10 @@ def data_generator(ORIG, TRAINING, VALIDATING, TESTING,
 		open(VALIDATING19, 'w') as validating_data19, \
 		open(VALIDATING20, 'w') as validating_data20, \
 		open(VALIDATING21, 'w') as validating_data21, \
-		open(VALIDATING22, 'w') as validating_data22, \
-		open(VALIDATING23, 'w') as validating_data23, \
-		open(VALIDATING24, 'w') as validating_data24, \
-		open(VALIDATING25, 'w') as validating_data25:
+		open(VALIDATING22, 'w') as validating_data22:
+		# open(VALIDATING23, 'w') as validating_data23:
+		# open(VALIDATING24, 'w') as validating_data24, \
+		# open(VALIDATING25, 'w') as validating_data25:
 		# open(VALIDATING24, 'w') as validating_data24, \
 		# open(VALIDATING25, 'w') as validating_data25, \
 		# open(VALIDATING26, 'w') as validating_data26, \
@@ -140,11 +135,11 @@ def data_generator(ORIG, TRAINING, VALIDATING, TESTING,
 		mode_20 = 0
 		mode_21 = 0
 		mode_22 = 0
-		mode_23 = 0
-		mode_24 = 0
-		mode_25 = 0
-		mode_26 = 0
-		mode_27 = 0
+		# mode_23 = 0
+		# mode_24 = 0
+		# mode_25 = 0
+		# mode_26 = 0
+		# mode_27 = 0
 		
 		for line in orig_data:
 			
@@ -385,56 +380,7 @@ def data_generator(ORIG, TRAINING, VALIDATING, TESTING,
 					validating_data22.write(line)
 				elif 10000 < mode_22 <= 11000:
 					testing_data.write(line)
-			
-			elif mode == 23:
-				mode_23 += 1
-				if mode_23 <= 9000:
-					training_data.write(line)
-				elif 9000 < mode_23 <= 10000:
-					validating_data.write(line)
-					validating_data23.write(line)
-				elif 10000 < mode_23 <= 11000:
-					testing_data.write(line)
-			
-			elif mode == 24:
-				mode_24 += 1
-				if mode_24 <= 9000:
-					training_data.write(line)
-				elif 9000 < mode_24 <= 10000:
-					validating_data.write(line)
-					validating_data24.write(line)
-				elif 10000 < mode_24 <= 11000:
-					testing_data.write(line)
-			
-			elif mode == 25:
-				mode_25 += 1
-				if mode_25 <= 9000:
-					training_data.write(line)
-				elif 9000 < mode_25 <= 10000:
-					validating_data.write(line)
-					validating_data25.write(line)
-				elif 10000 < mode_25 <= 11000:
-					testing_data.write(line)
-			
-			elif mode == 26:
-				mode_26 += 1
-				if mode_26 <= 9000:
-					training_data.write(line)
-				elif 9000 < mode_26 <= 10000:
-					validating_data.write(line)
-				# validating_data3.write(line)
-				elif 10000 < mode_26 <= 11000:
-					testing_data.write(line)
-			
-			elif mode == 27:
-				mode_27 += 1
-				if mode_27 <= 9000:
-					training_data.write(line)
-				elif 9000 < mode_27 <= 10000:
-					validating_data.write(line)
-				# validating_data3.write(line)
-				elif 10000 < mode_27 <= 11000:
-					testing_data.write(line)
+
 	print('=================================================')
 	end_timestamp = datetime.datetime.now()
 	time_duration = end_timestamp - start_timestamp
@@ -470,9 +416,6 @@ data_generator(ORIG=ORIG, TRAINING=TRAINING, VALIDATING=VALIDATING,
 							 VALIDATING20=VALIDATING20,
 							 VALIDATING21=VALIDATING21,
 							 VALIDATING22=VALIDATING22,
-							 VALIDATING23=VALIDATING23,
-							 VALIDATING24=VALIDATING24,
-							 VALIDATING25=VALIDATING25,
 							 # VALIDATING26=VALIDATING26,
 							 # VALIDATING27=VALIDATING27,
 							 )
