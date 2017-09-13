@@ -8,7 +8,10 @@ Usage:
 ```shell
 
 $
-python edge_analyzing.py --sequence='balloons' --file='/data/edge_strength_analyze/Balloons/cr_mixed_data_1.csv'
+python edge_analyzing.py --sequence='newspaper' --file='/data/newspaper/cr_mixed_data_3.csv' | tee > '/Users/pharrell_wang/PycharmProjects/data-processing-for-fdc/sample_data/newspaper/output.txt'
+
+quick-memo: in the name 'cr_mixed_data_3.csv',
+        `cr` means `comma-at-the-csv-line-end-has-been-removed`
 
 Note:
     skip size_0.csv, since 64x64 is not considered for
@@ -45,6 +48,7 @@ def main(_):
     input_file = homedir + FLAGS.file
     sequence_name = FLAGS.sequence
     x_ordered_dict, strength_dict = edge_analyzer(INPUT_FILE=input_file, SEQUENCE=sequence_name)
+
 
 if __name__ == '__main__':
     tf.app.run()

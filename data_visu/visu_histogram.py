@@ -12,7 +12,8 @@ Usage:
 ```shell
 
 $
-python data_visu/visu_histogram.py --seq='balloons' --size='8x8' --file='balloons/size_8_histogram_data_for_mode_09.csv' --mode='09'
+python data_visu/visu_histogram.py --seq='newspaper' --size='8x8' --file='newspaper/csv/size_8_hist_data_for_mode_09.csv' --mode='09'
+
 ```
 """
 from __future__ import absolute_import
@@ -32,7 +33,7 @@ FLAGS = tf.app.flags.FLAGS
 
 tf.app.flags.DEFINE_string(
     'file',
-    'save_histogram_data.csv',
+    'newspaper/csv/size_8_hist_data_for_mode_09.csv',
     'The file name of the csv to read, related to homedir, '
     'like `/data/step2_output/size_32_files.csv`')
 
@@ -43,13 +44,13 @@ tf.app.flags.DEFINE_string(
 
 tf.app.flags.DEFINE_string(
     'seq',
-    'balloons',
+    'newspaper',
     'sequence name, used as directory name')
 
 tf.app.flags.DEFINE_string(
     'mode',
-    '0',
-    '[only for display in fig] mode number, [0,37]')
+    '09',
+    '[only for display in fig] mode number, [0,36]')
 
 
 def main(_):
@@ -93,7 +94,7 @@ def main(_):
 
     plt.xlabel('Edge Strength', fontsize=10)
     plt.ylabel('No. of Samples', fontsize=10)
-    fig.savefig(homedir + '/PycharmProjects/data-processing-for-fdc/sample_data/%s/pdf/%s.pdf' % (FLAGS.seq, str(FLAGS.size) + '_' + str(FLAGS.mode)))
+    fig.savefig(homedir + '/PycharmProjects/data-processing-for-fdc/sample_data/%s/pdf/size%s.pdf' % (FLAGS.seq, str(FLAGS.size) + '_mode' + str(FLAGS.mode)))
 
     plt.show()
 

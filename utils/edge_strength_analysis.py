@@ -525,7 +525,7 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
             df = pd.DataFrame(d['strength_data_for_mode_%02d' % item])
             # SEQUENCE [balloons, ghost_fly, kendo, newspaper, poznan_hall_1920x1088, poznan_street_1920x1088, shark_1920x1088, undo_dancer_1920x1088 ]')
             df.to_csv(
-                homedir + '/PycharmProjects/data-processing-for-fdc/sample_data/%s/size_%s_histogram_data_for_mode_%02d.csv' % (
+                homedir + '/PycharmProjects/data-processing-for-fdc/sample_data/%s/csv/size_%s_hist_data_for_mode_%02d.csv' % (
                     str(SEQUENCE), str(RESHAPE), item),
                 index=False)
 

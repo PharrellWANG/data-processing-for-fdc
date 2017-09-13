@@ -7,24 +7,14 @@ from utils.comma_remover import comma_remover
 
 homedir = os.environ['HOME']
 list_of_input_files = [
-    homedir + '/data/edge_strength_analyze/Balloons/mixed_data_0.csv',
-    homedir + '/data/edge_strength_analyze/Balloons/mixed_data_1.csv',
-    homedir + '/data/edge_strength_analyze/Balloons/mixed_data_2.csv',
-    homedir + '/data/edge_strength_analyze/Balloons/mixed_data_3.csv',
-    # homedir + '/data/step1_output/size_08_files.csv',
-    # homedir + '/data/step1_output/size_16_files.csv',
-    # homedir + '/data/step1_output/size_32_files.csv',
-    # homedir + '/data/step1_output/size_64_files.csv'
+    homedir + '/data/newspaper/mixed_data_1.csv',
+    homedir + '/data/newspaper/mixed_data_2.csv',
+    homedir + '/data/newspaper/mixed_data_3.csv',
 ]
 list_of_output_files = [
-    homedir + '/data/edge_strength_analyze/Balloons/cr_mixed_data_0.csv',
-    homedir + '/data/edge_strength_analyze/Balloons/cr_mixed_data_1.csv',
-    homedir + '/data/edge_strength_analyze/Balloons/cr_mixed_data_2.csv',
-    homedir + '/data/edge_strength_analyze/Balloons/cr_mixed_data_3.csv',
-    # homedir + '/data/step1_output/size_08_files.csv',
-    # homedir + '/data/step1_output/size_16_files.csv',
-    # homedir + '/data/step1_output/size_32_files.csv',
-    # homedir + '/data/step1_output/size_64_files.csv'
+    homedir + '/data/newspaper/cr_mixed_data_1.csv',
+    homedir + '/data/newspaper/cr_mixed_data_2.csv',
+    homedir + '/data/newspaper/cr_mixed_data_3.csv',
 ]
 
 for x in range(len(list_of_input_files)):
