@@ -2,6 +2,18 @@
 # Author: Pharrell_WANG
 # Date: 2017/6/28
 # ==============================================================================
+"""
+Functionality:
+    For removing the blocks where the average edge strength is
+    less than a certain value.
+
+Reason:
+    smooth regions might trap the cnn in ill condition
+
+Usage:
+    rename the INFILE OUTFILE, then from the terminal:
+        $ python remove_smooth.py
+"""
 import numpy as np
 import sys
 import pandas as pd
