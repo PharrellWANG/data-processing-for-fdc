@@ -12,7 +12,7 @@ Usage:
 ```shell
 
 $
-python data_visu/visu_histogram.py --seq='newspaper' --size='8x8' --file='newspaper/csv/size_8_hist_data_for_mode_09.csv' --mode='09'
+python data_visu/visu_histogram.py --seq='kendo' --size='16x16' --file='kendo/csv/size_16_hist_data_for_mode_36 .csv' --mode='36'
 
 ```
 """
@@ -66,7 +66,7 @@ def main(_):
     # print(np_array_from_csv_file.shape)
     # print(np_array_from_csv_file.ndim)
     # n, bins = np.histogram(data, 100)
-    n, bins = np.histogram(np_array_from_csv_file, 20)
+    n, bins = np.histogram(np_array_from_csv_file, 2000)
 
     # get the corners of the rectangles for the histogram
     left = np.array(bins[:-1])

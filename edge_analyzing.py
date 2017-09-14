@@ -8,13 +8,17 @@ Usage:
 ```shell
 
 $
-python edge_analyzing.py --sequence='newspaper' --file='/data/newspaper/cr_mixed_data_3.csv' | tee > '/Users/pharrell_wang/PycharmProjects/data-processing-for-fdc/sample_data/newspaper/output.txt'
+python edge_analyzing.py --sequence='undo_dancer_1920x1088' --file='/data/undo_dancer_1920x1088/cr_mixed_data_3.csv' &> '/Users/pharrell_wang/PycharmProjects/data-processing-for-fdc/sample_data/undo_dancer_1920x1088/08x08_edge_analysis_result.txt'
 
+python edge_analyzing.py --sequence='undo_dancer_1920x1088' --file='/data/undo_dancer_1920x1088/cr_mixed_data_2.csv' &> '/Users/pharrell_wang/PycharmProjects/data-processing-for-fdc/sample_data/undo_dancer_1920x1088/16x16_edge_analysis_result.txt'
+
+python edge_analyzing.py --sequence='undo_dancer_1920x1088' --file='/data/undo_dancer_1920x1088/cr_mixed_data_1.csv' &> '/Users/pharrell_wang/PycharmProjects/data-processing-for-fdc/sample_data/undo_dancer_1920x1088/32x32_edge_analysis_result.txt'
+ghost_fly
 quick-memo: in the name 'cr_mixed_data_3.csv',
         `cr` means `comma-at-the-csv-line-end-has-been-removed`
 
 Note:
-    skip size_0.csv, since 64x64 is not considered for
+    skip ``cr_mixed_data__0.csv``, since 64x64 is not considered for
     DMM fast search algorithm.
 
     That is to say, for every sequence, you should be able

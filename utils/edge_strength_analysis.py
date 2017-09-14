@@ -123,8 +123,8 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
         for num, line in enumerate(r):
             data = np.array([])
             cnt += 1
-            sys.stdout.write(
-                '\r>> processing line: %d / %d' % (cnt, csv.shape[0]))
+            # sys.stdout.write(
+            #     '\r>> processing line: %d / %d' % (cnt, csv.shape[0]))
             # sys.stdout.write(
             #     '\r>> processing percent: %d ' % round(cnt / csv.shape[0], 3))
             if line[-3:-2] == ',':
