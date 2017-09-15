@@ -97,7 +97,7 @@ for x in FILE_TO_BE_CONVERTED_STR_ARRAY:
 	with tf.python_io.TFRecordWriter(TFRecord_OUTPUT) as tfrecord_writer:
 		with tf.Graph().as_default():
 			image = tf.placeholder(dtype=tf.uint8, shape=shape)
-			encoded_png = tf.image.encode_png(image)
+			encoded_jpeg = tf.image.encode_jpeg(image)
 			
 			with tf.Session('') as sess:
 				for j in range(num_images):
@@ -106,12 +106,15 @@ for x in FILE_TO_BE_CONVERTED_STR_ARRAY:
 							j + 1, num_images))
 					sys.stdout.flush()
 					
-					png_string = sess.run(encoded_png,
+					jpg_string = sess.run(encoded_jpeg,
 																feed_dict={image: images[j]})
 					
+					# use  b'jpg' instead of png. Since in jpg, the yuv is used.
+					# (JPG is the same as JPEG)
 					example = dataset_utils.image_to_tfexample(
-						png_string, 'png'.encode(), RESHAPE, RESHAPE,
+						jpg_string, b'jpg', RESHAPE, RESHAPE,
 						labels[j])
+					
 					tfrecord_writer.write(example.SerializeToString())
 	# write label file
 	labels_to_class_names = dict(zip(range(len(_CLASS_NAMES)), _CLASS_NAMES))
