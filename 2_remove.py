@@ -7,14 +7,18 @@ from utils.comma_remover import comma_remover
 
 homedir = os.environ['HOME']
 list_of_input_files = [
-    homedir + '/data/undo_dancer_1920x1088/mixed_data_1.csv',
-    homedir + '/data/undo_dancer_1920x1088/mixed_data_2.csv',
-    homedir + '/data/undo_dancer_1920x1088/mixed_data_3.csv',
+    # homedir + '/data/last_trial/step1_output/size_04_files.csv',
+    # homedir + '/data/last_trial/step1_output/size_08_files.csv',
+    '/Users/pharrell_wang/data/last_trial/kendo/step1_output/size_08_files.csv',
+    # homedir + '/data/last_trial/step1_output/size_16_files.csv',
+    # homedir + '/data/last_trial/step1_output/size_32_files.csv',
 ]
 list_of_output_files = [
-    homedir + '/data/undo_dancer_1920x1088/cr_mixed_data_1.csv',
-    homedir + '/data/undo_dancer_1920x1088/cr_mixed_data_2.csv',
-    homedir + '/data/undo_dancer_1920x1088/cr_mixed_data_3.csv',
+    # homedir + '/data/last_trial/step2_output/size_04_files.csv',
+    # homedir + '/data/last_trial/step2_output/size_08_files.csv',
+    '/Users/pharrell_wang/data/last_trial/kendo/step2_output/size_08_files.csv'
+    # homedir + '/data/last_trial/step2_output/size_16_files.csv',
+    # homedir + '/data/last_trial/step2_output/size_32_files.csv',
 ]
 
 for x in range(len(list_of_input_files)):

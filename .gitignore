@@ -1,2 +1,17 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
+utils/__pycache__/
+sample_data/__init__.py
+sample_data/balloons/csv/
+sample_data/balloons/pdf/
+sample_data/ghost_fly/
+sample_data/kendo/
+sample_data/msft.csv
+sample_data/newspaper/
+sample_data/poznan_hall_1920x1088/
+sample_data/poznan_street_1920x1088/
+sample_data/save_histogram_data.csv
+sample_data/saved.csv
+sample_data/shark_1920x1088/
+sample_data/undo_dancer_1920x1088/
+sample_data/x_statistics/
