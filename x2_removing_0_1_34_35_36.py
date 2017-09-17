@@ -5,8 +5,8 @@ import os
 import sys
 
 homedir = os.environ['HOME']
-inFile = homedir + '/data/smooth_removed/ave_90_size_08_files.csv'
-outFile = homedir + '/data/smooth_removed/32_classes__ave_90_size_08_files.csv'
+inFile = '/Users/pharrell_wang/data/finalized/validate_08.csv'
+outFile = '/Users/pharrell_wang/data/finalized/validate_08_013334removed.csv'
 
 
 def processing(a, b):

@@ -9,14 +9,14 @@ homedir = os.environ['HOME']
 list_of_input_files = [
     # homedir + '/data/last_trial/step1_output/size_04_files.csv',
     # homedir + '/data/last_trial/step1_output/size_08_files.csv',
-    '/Users/pharrell_wang/data/last_trial/kendo/step1_output/size_08_files.csv',
+    '/Users/pharrell_wang/data/kendo/last_trial/mix_data_3.csv',
     # homedir + '/data/last_trial/step1_output/size_16_files.csv',
     # homedir + '/data/last_trial/step1_output/size_32_files.csv',
 ]
 list_of_output_files = [
     # homedir + '/data/last_trial/step2_output/size_04_files.csv',
     # homedir + '/data/last_trial/step2_output/size_08_files.csv',
-    '/Users/pharrell_wang/data/last_trial/kendo/step2_output/size_08_files.csv'
+    '/Users/pharrell_wang/data/finalized/validate_test_08_files.csv'
     # homedir + '/data/last_trial/step2_output/size_16_files.csv',
     # homedir + '/data/last_trial/step2_output/size_32_files.csv',
 ]

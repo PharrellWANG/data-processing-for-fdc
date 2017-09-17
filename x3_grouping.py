@@ -11,11 +11,11 @@ import datetime
 
 homedir = os.environ['HOME']
 input_files = [
-    homedir + '/data/smooth_removed/32_classes__ave_90_size_08_files.csv'
+    '/Users/pharrell_wang/data/finalized/validate_08.csv'
 ]
 
 output_files = [
-    homedir + '/data/smooth_removed/32_classes__ave_90_size_08_files__after_grouping.csv'
+    '/Users/pharrell_wang/data/finalized/vali_08_keepme.csv'
 ]
 
 for file_index in range(len(input_files)):
@@ -47,48 +47,60 @@ for file_index in range(len(input_files)):
             df[64][x] = 5
         elif df[64][x] == 8:
             df[64][x] = 6
-        elif df[64][x] == 9 or df[64][x] == 10 or df[64][x] == 11:
+        elif df[64][x] == 9:
             df[64][x] = 7
-        elif df[64][x] == 12:
+        elif df[64][x] == 10:
             df[64][x] = 8
-        elif df[64][x] == 13:
+        elif df[64][x] == 11:
             df[64][x] = 9
-        elif df[64][x] == 14:
+        elif df[64][x] == 12:
             df[64][x] = 10
-        elif df[64][x] == 15:
+        elif df[64][x] == 13:
             df[64][x] = 11
-        elif df[64][x] == 16:
+        elif df[64][x] == 14:
             df[64][x] = 12
-        elif df[64][x] == 17:
+        elif df[64][x] == 15:
             df[64][x] = 13
-        elif df[64][x] == 18:
+        elif df[64][x] == 16:
             df[64][x] = 14
-        elif df[64][x] == 19:
+        elif df[64][x] == 17:
             df[64][x] = 15
-        elif df[64][x] == 20:
+        elif df[64][x] == 18:
             df[64][x] = 16
-        elif df[64][x] == 21:
+        elif df[64][x] == 19:
             df[64][x] = 17
-        elif df[64][x] == 22:
+        elif df[64][x] == 20:
             df[64][x] = 18
-        elif df[64][x] == 23:
+        elif df[64][x] == 21:
             df[64][x] = 19
-        elif df[64][x] == 24:
+        elif df[64][x] == 22:
             df[64][x] = 20
-        elif df[64][x] == 25 or df[64][x] == 26 or df[64][x] == 27:
+        elif df[64][x] == 23:
             df[64][x] = 21
-        elif df[64][x] == 28:
+        elif df[64][x] == 24:
             df[64][x] = 22
-        elif df[64][x] == 29:
+        elif df[64][x] == 25:
             df[64][x] = 23
-        elif df[64][x] == 30:
+        elif df[64][x] == 26:
             df[64][x] = 24
-        elif df[64][x] == 31:
+        elif df[64][x] == 27:
             df[64][x] = 25
-        elif df[64][x] == 32:
+        elif df[64][x] == 28:
             df[64][x] = 26
-        elif df[64][x] == 33:
+        elif df[64][x] == 29:
             df[64][x] = 27
+
+        elif df[64][x] == 30:
+            df[64][x] = 28
+
+        elif df[64][x] == 31:
+            df[64][x] = 29
+
+        elif df[64][x] == 32:
+            df[64][x] = 30
+
+        elif df[64][x] == 33:
+            df[64][x] = 31
     print('=======================')
     print('now we are writing: ' + str(
         output_files[file_index]) + ' . Please wait a few seconds...')
