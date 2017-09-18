@@ -21,8 +21,21 @@ import datetime
 import os
 
 homedir = os.environ['HOME']
-INFILE = '/Users/pharrell_wang/data/finalized/validate_test_08_files.csv'
-OUTFILE = '/Users/pharrell_wang/data/finalized/validate_test_08.csv'
+
+list_of_input = [
+    homedir + '/data/last_trial/step3_output/m_size_04.csv',
+    homedir + '/data/last_trial/step3_output/m_size_08.csv',
+    homedir + '/data/last_trial/step3_output/m_size_16.csv',
+    homedir + '/data/last_trial/step3_output/m_size_32.csv',
+    homedir + '/data/last_trial/step3_output/m_size_64.csv',
+]
+list_of_output = [
+    homedir + '/data/last_trial/step4_output/sm_size_04.csv',
+    homedir + '/data/last_trial/step4_output/sm_size_08.csv',
+    homedir + '/data/last_trial/step4_output/sm_size_16.csv',
+    homedir + '/data/last_trial/step4_output/sm_size_32.csv',
+    homedir + '/data/last_trial/step4_output/sm_size_64.csv',
+]
 
 
 def remove_smooth(INPUT_FILE, OUTPUT_FILE):
@@ -39,7 +52,10 @@ def remove_smooth(INPUT_FILE, OUTPUT_FILE):
     print('total elements in a row:')
     print(csv.shape[1])
 
-    if csv.shape[1] == 65:
+    if csv.shape[1] == 17:
+        RESHAPE = 4
+        print('block size: 4x4')
+    elif csv.shape[1] == 65:
         RESHAPE = 8
         print('block size: 8x8')
     elif csv.shape[1] == 257:
@@ -48,6 +64,9 @@ def remove_smooth(INPUT_FILE, OUTPUT_FILE):
     elif csv.shape[1] == 1025:
         RESHAPE = 32
         print('block size: 32x32')
+    elif csv.shape[1] == 4097:
+        RESHAPE = 64
+        print('block size: 64x64')
     assert (csv.shape[1] == RESHAPE * RESHAPE + 1)
 
     with open(INPUT_FILE, 'r') as r, \
@@ -127,4 +146,5 @@ def remove_smooth(INPUT_FILE, OUTPUT_FILE):
     print('++++++++++++++++++++')
 
 
-remove_smooth(INPUT_FILE=INFILE, OUTPUT_FILE=OUTFILE)
+for x in range(len(list_of_input)):
+    remove_smooth(list_of_input[x], list_of_output[x])

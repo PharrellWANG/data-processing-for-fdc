@@ -5,8 +5,21 @@ import os
 import sys
 
 homedir = os.environ['HOME']
-inFile = '/Users/pharrell_wang/data/finalized/validate_08.csv'
-outFile = '/Users/pharrell_wang/data/finalized/validate_08_013334removed.csv'
+
+list_of_input = [
+    homedir + '/data/last_trial/step2_output/size_04.csv',
+    homedir + '/data/last_trial/step2_output/size_08.csv',
+    homedir + '/data/last_trial/step2_output/size_16.csv',
+    homedir + '/data/last_trial/step2_output/size_32.csv',
+    homedir + '/data/last_trial/step2_output/size_64.csv',
+]
+list_of_output = [
+    homedir + '/data/last_trial/step3_output/size_04.csv',
+    homedir + '/data/last_trial/step3_output/size_08.csv',
+    homedir + '/data/last_trial/step3_output/size_16.csv',
+    homedir + '/data/last_trial/step3_output/size_32.csv',
+    homedir + '/data/last_trial/step3_output/size_64.csv',
+]
 
 
 def processing(a, b):
@@ -29,4 +42,5 @@ def processing(a, b):
                 out_file.write(line)
 
 
-processing(inFile, outFile)
+for x in range(len(list_of_input)):
+    processing(list_of_input[x], list_of_output[x])

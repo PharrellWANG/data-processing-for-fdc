@@ -3,7 +3,6 @@
 # Date: 2017/6/28
 # ==============================================================================
 
-import sys
 import os
 import numpy as np
 import pandas as pd
@@ -110,12 +109,16 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
     print('total elements in a row:')
     print(csv.shape[1])
 
-    if csv.shape[1] == 65:
+    if csv.shape[1] == 17:
+        RESHAPE = 4
+    elif csv.shape[1] == 65:
         RESHAPE = 8
     elif csv.shape[1] == 257:
         RESHAPE = 16
     elif csv.shape[1] == 1025:
         RESHAPE = 32
+    elif csv.shape[1] == 4097:
+        RESHAPE = 64
     assert (csv.shape[1] == RESHAPE * RESHAPE + 1)
 
     with open(INPUT_FILE, 'r') as r:
@@ -162,10 +165,6 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
                         features[i + 1][j + 1]
                     strength = horizontal_strength ** 2 + vertical_strength ** 2
                     data = np.append(data, np.array([strength]))  # total strength of a block (or you can say a line in the csv file)
-                    # df = pd.DataFrame(data)
-                    # df.to_csv(
-                    #     '/Users/pharrell_wang/PycharmProjects/data-processing-for-fdc/sample_data/save_histogram_data.csv',
-                    #     index=False)
                     total_strength += strength
 
             assert (data.ndim == 1)
@@ -176,14 +175,12 @@ def edge_analyzer(INPUT_FILE, SEQUENCE):
             # step2: non-zero values (because sometimes the edge length can be short. We only want the sharpness. We do not want smooth regions to affect the sharpness.)
             data = top_k[top_k.nonzero()]
             data = data[np.where(data > 8)]  # for [[2, 0], [0, 0]], i exclude it from the concept of sharp
-            if data.size == 0:  # all the strength are zero. (that is to say , it is the DC mode)
+            if data.size == 0:  # all the strength are zero. (that is to say , it is like the DC mode)
                 ave = 0
                 data = np.array([0])
             else:
                 ave = np.mean(data)
                 data = np.array([ave])
-
-            # !!!! it seems that block strengh
 
             assert (data.ndim == 1)
 
