@@ -9,14 +9,14 @@ import datetime
 
 homedir = os.environ['HOME']
 list_of_input = [
-    homedir + '/data/last_trial/step5_output/train_08x08.csv',
-    homedir + '/data/last_trial/step5_output/test_08x08.csv',
-    homedir + '/data/last_trial/step5_output/val_08x08.csv',
+    homedir + '/data/last_trial/step5_output/train_64x64.csv',
+    # homedir + '/data/last_trial/step5_output/test_64x64.csv',
+    # homedir + '/data/last_trial/step5_output/val_64x64.csv',
 ]
 list_of_output = [
-    homedir + '/data/last_trial/step6_output/train_08x08.csv',
-    homedir + '/data/last_trial/step6_output/test_08x08.csv',
-    homedir + '/data/last_trial/step6_output/val_08x08.csv',
+    homedir + '/data/last_trial/step6_output/train_64x64.csv',
+    # homedir + '/data/last_trial/step6_output/test_64x64.csv',
+    # homedir + '/data/last_trial/step6_output/val_64x64.csv',
 ]
 
 for file_index in range(len(list_of_input)):
@@ -42,7 +42,7 @@ for file_index in range(len(list_of_input)):
         print('block size: 16x16')
     elif df.shape[1] == 1025:
         RESHAPE = 32
-        print('block size: 32x32')
+        print('block size: 64x64')
     elif df.shape[1] == 4097:
         RESHAPE = 64
         print('block size: 64x64')
