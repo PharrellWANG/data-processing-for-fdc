@@ -19,5 +19,5 @@
 * ```pharrell-dev-002-tfrecord-tostring``` is the second stage of the development. And it contains valuable comments and playgrounds for experimental activities.
 * ```edge_strength_analysis_for_sequences``` is the branch containing the codes for edge strength analysis.
 
-If you want to use the project, please checkout ```master``` branch.  
+If you want to use the project, please checkout ```edge_strength_analysis_for_sequences``` branch.  
   
