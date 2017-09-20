@@ -14,7 +14,7 @@ import os
 homedir = os.environ['HOME']
 # input_file = homedir + '/data/smooth_removed/32_classes__ave_90_size_08_files.csv'
 # input_file = '/Users/pharrell_wang/data/last_trial/step5_output/smg_size_08.csv'
-input_file = '/Users/pharrell_wang/data/last_trial/step6_output/size_16/train_16x16.csv'
+input_file = '/Users/pharrell_wang/data/pure_eval/step3_output/size_08.csv'
 
 # input_file = '/Users/Pharrell_WANG/data/smooth_removed/28_classes__ave_90_size_08_files__after_grouping.csv'
 

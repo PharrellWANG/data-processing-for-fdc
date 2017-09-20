@@ -7,18 +7,18 @@ import sys
 homedir = os.environ['HOME']
 
 list_of_input = [
-    homedir + '/data/last_trial/step2_output/size_04.csv',
-    homedir + '/data/last_trial/step2_output/size_08.csv',
-    homedir + '/data/last_trial/step2_output/size_16.csv',
-    homedir + '/data/last_trial/step2_output/size_32.csv',
-    homedir + '/data/last_trial/step2_output/size_64.csv',
+    homedir + '/data/pure_eval/step2_output/size_04_files.csv',
+    homedir + '/data/pure_eval/step2_output/size_08_files.csv',
+    homedir + '/data/pure_eval/step2_output/size_16_files.csv',
+    homedir + '/data/pure_eval/step2_output/size_32_files.csv',
+    homedir + '/data/pure_eval/step2_output/size_64_files.csv',
 ]
 list_of_output = [
-    homedir + '/data/last_trial/step3_output/size_04.csv',
-    homedir + '/data/last_trial/step3_output/size_08.csv',
-    homedir + '/data/last_trial/step3_output/size_16.csv',
-    homedir + '/data/last_trial/step3_output/size_32.csv',
-    homedir + '/data/last_trial/step3_output/size_64.csv',
+    homedir + '/data/pure_eval/step3_output/size_04.csv',
+    homedir + '/data/pure_eval/step3_output/size_08.csv',
+    homedir + '/data/pure_eval/step3_output/size_16.csv',
+    homedir + '/data/pure_eval/step3_output/size_32.csv',
+    homedir + '/data/pure_eval/step3_output/size_64.csv',
 ]
 
 

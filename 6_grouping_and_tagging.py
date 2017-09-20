@@ -9,12 +9,12 @@ import datetime
 
 homedir = os.environ['HOME']
 list_of_input = [
-    homedir + '/data/last_trial/step5_output/train_64x64.csv',
+    homedir + '/data/pure_eval/step5_output/eval_08x08.csv',
     # homedir + '/data/last_trial/step5_output/test_64x64.csv',
     # homedir + '/data/last_trial/step5_output/val_64x64.csv',
 ]
 list_of_output = [
-    homedir + '/data/last_trial/step6_output/train_64x64.csv',
+    homedir + '/data/pure_eval/step6_output/eval_64x64.csv',
     # homedir + '/data/last_trial/step6_output/test_64x64.csv',
     # homedir + '/data/last_trial/step6_output/val_64x64.csv',
 ]
