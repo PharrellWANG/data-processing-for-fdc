@@ -7,39 +7,39 @@ import os
 import datetime
 
 homedir = os.environ['HOME']
-ORIG = '/Users/pharrell_wang/data/pure_eval/step3_output/size_08.csv'
-TRAINING = homedir + '/data/pure_eval/step5_output/train_08x08.csv'
-TESTING = homedir + '/data/pure_eval/step5_output/test_08x08.csv'
-VALIDATING = homedir + '/data/pure_eval/step5_output/val_08x08.csv'
+ORIG = '/Users/pharrell_wang/data/pure_eval/step3_output/size_32.csv'
+TRAINING = homedir + '/data/pure_eval/step5_output/eval_32x32.csv'
+TESTING = homedir + '/data/pure_eval/step5_output/test_32x32.csv'
+VALIDATING = homedir + '/data/pure_eval/step5_output/val_32x32.csv'
 
-VALIDATING0 = homedir + '/data/pure_eval/step5_output/validation_08x08_0.csv'
-VALIDATING1 = homedir + '/data/pure_eval/step5_output/validation_08x08_1.csv'
-VALIDATING2 = homedir + '/data/pure_eval/step5_output/validation_08x08_2.csv'
-VALIDATING3 = homedir + '/data/pure_eval/step5_output/validation_08x08_3.csv'
-VALIDATING4 = homedir + '/data/pure_eval/step5_output/validation_08x08_4.csv'
-VALIDATING5 = homedir + '/data/pure_eval/step5_output/validation_08x08_5.csv'
-VALIDATING6 = homedir + '/data/pure_eval/step5_output/validation_08x08_6.csv'
-VALIDATING7 = homedir + '/data/pure_eval/step5_output/validation_08x08_7.csv'
-VALIDATING8 = homedir + '/data/pure_eval/step5_output/validation_08x08_8.csv'
-VALIDATING9 = homedir + '/data/pure_eval/step5_output/validation_08x08_9.csv'
-VALIDATING10 = homedir + '/data/pure_eval/step5_output/validation_08x08_10.csv'
-VALIDATING11 = homedir + '/data/pure_eval/step5_output/validation_08x08_11.csv'
-VALIDATING12 = homedir + '/data/pure_eval/step5_output/validation_08x08_12.csv'
-VALIDATING13 = homedir + '/data/pure_eval/step5_output/validation_08x08_13.csv'
-VALIDATING14 = homedir + '/data/pure_eval/step5_output/validation_08x08_14.csv'
-VALIDATING15 = homedir + '/data/pure_eval/step5_output/validation_08x08_15.csv'
-VALIDATING16 = homedir + '/data/pure_eval/step5_output/validation_08x08_16.csv'
-VALIDATING17 = homedir + '/data/pure_eval/step5_output/validation_08x08_17.csv'
-VALIDATING18 = homedir + '/data/pure_eval/step5_output/validation_08x08_18.csv'
-VALIDATING19 = homedir + '/data/pure_eval/step5_output/validation_08x08_19.csv'
-VALIDATING20 = homedir + '/data/pure_eval/step5_output/validation_08x08_20.csv'
-VALIDATING21 = homedir + '/data/pure_eval/step5_output/validation_08x08_21.csv'
-VALIDATING22 = homedir + '/data/pure_eval/step5_output/validation_08x08_22.csv'
-VALIDATING23 = homedir + '/data/pure_eval/step5_output/validation_08x08_23.csv'
-VALIDATING24 = homedir + '/data/pure_eval/step5_output/validation_08x08_24.csv'
-VALIDATING25 = homedir + '/data/pure_eval/step5_output/validation_08x08_25.csv'
-VALIDATING26 = homedir + '/data/pure_eval/step5_output/validation_08x08_26.csv'
-VALIDATING27 = homedir + '/data/pure_eval/step5_output/validation_08x08_27.csv'
+VALIDATING0 = homedir + '/data/pure_eval/step5_output/validation_32x32_0.csv'
+VALIDATING1 = homedir + '/data/pure_eval/step5_output/validation_32x32_1.csv'
+VALIDATING2 = homedir + '/data/pure_eval/step5_output/validation_32x32_2.csv'
+VALIDATING3 = homedir + '/data/pure_eval/step5_output/validation_32x32_3.csv'
+VALIDATING4 = homedir + '/data/pure_eval/step5_output/validation_32x32_4.csv'
+VALIDATING5 = homedir + '/data/pure_eval/step5_output/validation_32x32_5.csv'
+VALIDATING6 = homedir + '/data/pure_eval/step5_output/validation_32x32_6.csv'
+VALIDATING7 = homedir + '/data/pure_eval/step5_output/validation_32x32_7.csv'
+VALIDATING8 = homedir + '/data/pure_eval/step5_output/validation_32x32_8.csv'
+VALIDATING9 = homedir + '/data/pure_eval/step5_output/validation_32x32_9.csv'
+VALIDATING10 = homedir + '/data/pure_eval/step5_output/validation_32x32_10.csv'
+VALIDATING11 = homedir + '/data/pure_eval/step5_output/validation_32x32_11.csv'
+VALIDATING12 = homedir + '/data/pure_eval/step5_output/validation_32x32_12.csv'
+VALIDATING13 = homedir + '/data/pure_eval/step5_output/validation_32x32_13.csv'
+VALIDATING14 = homedir + '/data/pure_eval/step5_output/validation_32x32_14.csv'
+VALIDATING15 = homedir + '/data/pure_eval/step5_output/validation_32x32_15.csv'
+VALIDATING16 = homedir + '/data/pure_eval/step5_output/validation_32x32_16.csv'
+VALIDATING17 = homedir + '/data/pure_eval/step5_output/validation_32x32_17.csv'
+VALIDATING18 = homedir + '/data/pure_eval/step5_output/validation_32x32_18.csv'
+VALIDATING19 = homedir + '/data/pure_eval/step5_output/validation_32x32_19.csv'
+VALIDATING20 = homedir + '/data/pure_eval/step5_output/validation_32x32_20.csv'
+VALIDATING21 = homedir + '/data/pure_eval/step5_output/validation_32x32_21.csv'
+VALIDATING22 = homedir + '/data/pure_eval/step5_output/validation_32x32_22.csv'
+VALIDATING23 = homedir + '/data/pure_eval/step5_output/validation_32x32_23.csv'
+VALIDATING24 = homedir + '/data/pure_eval/step5_output/validation_32x32_24.csv'
+VALIDATING25 = homedir + '/data/pure_eval/step5_output/validation_32x32_25.csv'
+VALIDATING26 = homedir + '/data/pure_eval/step5_output/validation_32x32_26.csv'
+VALIDATING27 = homedir + '/data/pure_eval/step5_output/validation_32x32_27.csv'
 
 
 def data_generator(ORIG, TRAINING, VALIDATING, TESTING,
@@ -164,319 +164,319 @@ def data_generator(ORIG, TRAINING, VALIDATING, TESTING,
 
             if mode == 2:
                 mode_2 += 1
-                if mode_2 <= 7473:
+                if mode_2 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_2 <= 7473:
+                elif 998 < mode_2 <= 998:
                     validating_data.write(line)
                     validating_data0.write(line)
-                elif 7473 < mode_2 <= 7473:
+                elif 998 < mode_2 <= 998:
                     testing_data.write(line)
 
             elif mode == 3:
                 mode_3 += 1
-                if mode_3 <= 7473:
+                if mode_3 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_3 <= 7473:
+                elif 998 < mode_3 <= 998:
                     validating_data.write(line)
                     validating_data1.write(line)
-                elif 7473 < mode_3 <= 7473:
+                elif 998 < mode_3 <= 998:
                     testing_data.write(line)
 
             elif mode == 4:
                 mode_4 += 1
-                if mode_4 <= 7473:
+                if mode_4 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_4 <= 7473:
+                elif 998 < mode_4 <= 998:
                     validating_data.write(line)
                     validating_data2.write(line)
-                elif 7473 < mode_4 <= 7473:
+                elif 998 < mode_4 <= 998:
                     testing_data.write(line)
 
             elif mode == 5:
                 mode_5 += 1
-                if mode_5 <= 7473:
+                if mode_5 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_5 <= 7473:
+                elif 998 < mode_5 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_5 <= 7473:
+                elif 998 < mode_5 <= 998:
                     testing_data.write(line)
 
             elif mode == 6:
                 mode_6 += 1
-                if mode_6 <= 7473:
+                if mode_6 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_6 <= 7473:
+                elif 998 < mode_6 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_6 <= 7473:
+                elif 998 < mode_6 <= 998:
                     testing_data.write(line)
 
             elif mode == 7:
                 mode_7 += 1
-                if mode_7 <= 7473:
+                if mode_7 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_7 <= 7473:
+                elif 998 < mode_7 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_7 <= 7473:
+                elif 998 < mode_7 <= 998:
                     testing_data.write(line)
 
             elif mode == 8:
                 mode_8 += 1
-                if mode_8 <= 7473:
+                if mode_8 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_8 <= 7473:
+                elif 998 < mode_8 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_8 <= 7473:
+                elif 998 < mode_8 <= 998:
                     testing_data.write(line)
 
             elif mode == 9:
                 mode_9 += 1
-                if mode_9 <= 7473:
+                if mode_9 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_9 <= 7473:
+                elif 998 < mode_9 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_9 <= 7473:
+                elif 998 < mode_9 <= 998:
                     testing_data.write(line)
 
             elif mode == 10:
                 mode_10 += 1
-                if mode_10 <= 7473:
+                if mode_10 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_10 <= 7473:
+                elif 998 < mode_10 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_10 <= 7473:
+                elif 998 < mode_10 <= 998:
                     testing_data.write(line)
 
             elif mode == 11:
                 mode_11 += 1
-                if mode_11 <= 7473:
+                if mode_11 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_11 <= 7473:
+                elif 998 < mode_11 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_11 <= 7473:
+                elif 998 < mode_11 <= 998:
                     testing_data.write(line)
 
             elif mode == 12:
                 mode_12 += 1
-                if mode_12 <= 7473:
+                if mode_12 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_12 <= 7473:
+                elif 998 < mode_12 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_12 <= 7473:
+                elif 998 < mode_12 <= 998:
                     testing_data.write(line)
 
             elif mode == 13:
                 mode_13 += 1
-                if mode_13 <= 7473:
+                if mode_13 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_13 <= 7473:
+                elif 998 < mode_13 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_13 <= 7473:
+                elif 998 < mode_13 <= 998:
                     testing_data.write(line)
 
             elif mode == 14:
                 mode_14 += 1
-                if mode_14 <= 7473:
+                if mode_14 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_14 <= 7473:
+                elif 998 < mode_14 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_14 <= 7473:
+                elif 998 < mode_14 <= 998:
                     testing_data.write(line)
 
             elif mode == 15:
                 mode_15 += 1
-                if mode_15 <= 7473:
+                if mode_15 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_15 <= 7473:
+                elif 998 < mode_15 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_15 <= 7473:
+                elif 998 < mode_15 <= 998:
                     testing_data.write(line)
 
             elif mode == 16:
                 mode_16 += 1
-                if mode_16 <= 7473:
+                if mode_16 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_16 <= 7473:
+                elif 998 < mode_16 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_16 <= 7473:
+                elif 998 < mode_16 <= 998:
                     testing_data.write(line)
 
             elif mode == 17:
                 mode_17 += 1
-                if mode_17 <= 7473:
+                if mode_17 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_17 <= 7473:
+                elif 998 < mode_17 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_17 <= 7473:
+                elif 998 < mode_17 <= 998:
                     testing_data.write(line)
 
             elif mode == 18:
                 mode_18 += 1
-                if mode_18 <= 7473:
+                if mode_18 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_18 <= 7473:
+                elif 998 < mode_18 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_18 <= 7473:
+                elif 998 < mode_18 <= 998:
                     testing_data.write(line)
 
             elif mode == 19:
                 mode_19 += 1
-                if mode_19 <= 7473:
+                if mode_19 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_19 <= 7473:
+                elif 998 < mode_19 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_19 <= 7473:
+                elif 998 < mode_19 <= 998:
                     testing_data.write(line)
 
             elif mode == 20:
                 mode_20 += 1
-                if mode_20 <= 7473:
+                if mode_20 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_20 <= 7473:
+                elif 998 < mode_20 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_20 <= 7473:
+                elif 998 < mode_20 <= 998:
                     testing_data.write(line)
 
             elif mode == 21:
                 mode_21 += 1
-                if mode_21 <= 7473:
+                if mode_21 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_21 <= 7473:
+                elif 998 < mode_21 <= 998:
                     validating_data.write(line)
                     validating_data21.write(line)
-                elif 7473 < mode_21 <= 7473:
+                elif 998 < mode_21 <= 998:
                     testing_data.write(line)
 
             elif mode == 22:
                 mode_22 += 1
-                if mode_22 <= 7473:
+                if mode_22 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_22 <= 7473:
+                elif 998 < mode_22 <= 998:
                     validating_data.write(line)
                     validating_data22.write(line)
-                elif 7473 < mode_22 <= 7473:
+                elif 998 < mode_22 <= 998:
                     testing_data.write(line)
 
             elif mode == 23:
                 mode_23 += 1
-                if mode_23 <= 7473:
+                if mode_23 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_23 <= 7473:
+                elif 998 < mode_23 <= 998:
                     validating_data.write(line)
                     validating_data23.write(line)
-                elif 7473 < mode_23 <= 7473:
+                elif 998 < mode_23 <= 998:
                     testing_data.write(line)
 
             elif mode == 24:
                 mode_24 += 1
-                if mode_24 <= 7473:
+                if mode_24 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_24 <= 7473:
+                elif 998 < mode_24 <= 998:
                     validating_data.write(line)
                     validating_data24.write(line)
-                elif 7473 < mode_24 <= 7473:
+                elif 998 < mode_24 <= 998:
                     testing_data.write(line)
 
             elif mode == 25:
                 mode_25 += 1
-                if mode_25 <= 7473:
+                if mode_25 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_25 <= 7473:
+                elif 998 < mode_25 <= 998:
                     validating_data.write(line)
                     validating_data25.write(line)
-                elif 7473 < mode_25 <= 7473:
+                elif 998 < mode_25 <= 998:
                     testing_data.write(line)
 
             elif mode == 26:
                 mode_26 += 1
-                if mode_26 <= 7473:
+                if mode_26 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_26 <= 7473:
+                elif 998 < mode_26 <= 998:
                     validating_data.write(line)
-                elif 7473 < mode_26 <= 7473:
+                elif 998 < mode_26 <= 998:
                     testing_data.write(line)
 
             elif mode == 27:
                 mode_27 += 1
-                if mode_27 <= 7473:
+                if mode_27 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_27 <= 7473:
+                elif 998 < mode_27 <= 998:
                     validating_data.write(line)
-                elif 7473 < mode_27 <= 7473:
+                elif 998 < mode_27 <= 998:
                     testing_data.write(line)
 
             elif mode == 28:
                 mode_28 += 1
-                if mode_28 <= 7473:
+                if mode_28 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_28 <= 7473:
+                elif 998 < mode_28 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_28 <= 7473:
+                elif 998 < mode_28 <= 998:
                     testing_data.write(line)
 
             elif mode == 29:
                 mode_29 += 1
-                if mode_29 <= 7473:
+                if mode_29 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_29 <= 7473:
+                elif 998 < mode_29 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_29 <= 7473:
+                elif 998 < mode_29 <= 998:
                     testing_data.write(line)
 
             elif mode == 30:
                 mode_30 += 1
-                if mode_30 <= 7473:
+                if mode_30 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_30 <= 7473:
+                elif 998 < mode_30 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_30 <= 7473:
+                elif 998 < mode_30 <= 998:
                     testing_data.write(line)
 
             elif mode == 31:
                 mode_31 += 1
-                if mode_31 <= 7473:
+                if mode_31 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_31 <= 7473:
+                elif 998 < mode_31 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_31 <= 7473:
+                elif 998 < mode_31 <= 998:
                     testing_data.write(line)
 
             elif mode == 32:
                 mode_32 += 1
-                if mode_32 <= 7473:
+                if mode_32 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_32 <= 7473:
+                elif 998 < mode_32 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_32 <= 7473:
+                elif 998 < mode_32 <= 998:
                     testing_data.write(line)
             elif mode == 33:
                 mode_33 += 1
-                if mode_33 <= 7473:
+                if mode_33 <= 998:
                     training_data.write(line)
-                elif 7473 < mode_33 <= 7473:
+                elif 998 < mode_33 <= 998:
                     validating_data.write(line)
                 # validating_data3.write(line)
-                elif 7473 < mode_33 <= 7473:
+                elif 998 < mode_33 <= 998:
                     testing_data.write(line)
     print('=================================================')
     end_timestamp = datetime.datetime.now()

@@ -23,18 +23,18 @@ import os
 homedir = os.environ['HOME']
 
 list_of_input = [
-    homedir + '/data/last_trial/step3_output/m_size_04.csv',
-    homedir + '/data/last_trial/step3_output/m_size_08.csv',
-    homedir + '/data/last_trial/step3_output/m_size_16.csv',
-    homedir + '/data/last_trial/step3_output/m_size_32.csv',
-    homedir + '/data/last_trial/step3_output/m_size_64.csv',
+    # homedir + '/data/pure_eval/step3_output/m_size_04.csv',
+    # homedir + '/data/pure_eval/step3_output/size_08.csv',
+    # homedir + '/data/pure_eval/step3_output/size_16.csv',
+    homedir + '/data/pure_eval/step3_output/size_32.csv',
+    homedir + '/data/pure_eval/step3_output/size_64.csv',
 ]
 list_of_output = [
-    homedir + '/data/last_trial/step4_output/sm_size_04.csv',
-    homedir + '/data/last_trial/step4_output/sm_size_08.csv',
-    homedir + '/data/last_trial/step4_output/sm_size_16.csv',
-    homedir + '/data/last_trial/step4_output/sm_size_32.csv',
-    homedir + '/data/last_trial/step4_output/sm_size_64.csv',
+    # homedir + '/data/pure_eval/step4_output/sm_size_04.csv',
+    # homedir + '/data/pure_eval/step4_output/size_08.csv',
+    # homedir + '/data/pure_eval/step4_output/size_16.csv',
+    homedir + '/data/pure_eval/step4_output/th_15_size_32.csv',
+    homedir + '/data/pure_eval/step4_output/th_15_size_64.csv',
 ]
 
 
@@ -125,7 +125,7 @@ def remove_smooth(INPUT_FILE, OUTPUT_FILE):
             else:
                 ave = np.mean(data)
 
-            if ave >= 50:
+            if ave >= 15:
                 new_cnt += 1
                 # sys.stdout.write(
                 #     '\r>> yes, write new line please: %d' % new_cnt)

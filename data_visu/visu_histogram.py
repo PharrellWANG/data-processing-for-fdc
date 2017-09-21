@@ -12,7 +12,7 @@ Usage:
 ```shell
 
 $
-python data_visu/visu_histogram.py --seq='kendo' --size='8x8' --file='kendo/csv/size_8_hist_data_for_mode_02.csv' --mode='2'
+python data_visu/visu_histogram.py --seq='newspaper' --size='8x8' --file='newspaper/csv/size_8_hist_data_for_mode_00.csv' --mode='0'
 
 ```
 """
