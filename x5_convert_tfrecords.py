@@ -45,7 +45,7 @@ homedir = os.environ['HOME']
 VERBOSE = False
 
 RESHAPE = 8
-depth = 3
+depth = 1
 image_size = RESHAPE
 # parameters to adjust pharrell >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -82,11 +82,12 @@ for x in FILE_TO_BE_CONVERTED_STR_ARRAY:
 	for row in csv:
 		features, label = row[:-1], row[-1]
 		# populate the u and v as fake 0. Because with uv value to be 0s. it is almost the same as luma only blocks. Our model requires a 3 dim value.
-		features_with_uv_values = np.hstack((features, uv_values))
-		reshaped_depth_major_features = features_with_uv_values.reshape(depth, RESHAPE, RESHAPE)
+		# features_with_uv_values = np.hstack((features, uv_values))
+		# reshaped_depth_major_features = features_with_uv_values.reshape(depth, RESHAPE, RESHAPE)
 		# from [depth, reshape, reshape] to [reshape, reshape, depth]
-		reshaped_features = np.transpose(reshaped_depth_major_features, (1, 2, 0))
-		arrs_images.append(reshaped_features)
+		# reshaped_features = np.transpose(reshaped_depth_major_features, (1, 2, 0))
+		arrs_images.append(
+			np.transpose(features.reshape(depth, RESHAPE, RESHAPE), (1, 2, 0)))
 		arrs_labels.append(label)
 	res_images = np.concatenate([arr[np.newaxis] for arr in arrs_images])
 	images = res_images
