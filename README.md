@@ -8,9 +8,9 @@
 
 ### Caveats
 
-* Data (csv files and TFRecords) are stored in the ```/data``` folder under the HOME directory. E.g., ```/home/ubuntu/data/``` (Linux) or ```/Users/pharrell_wang/data/``` (macOS)
+* Data (csv files and TFRecords) are stored in the ```/data``` folder under the HOME directory. E.g., ```/home/you_username/data/``` (Linux) or ```/Users/your_username/data/``` (macOS)
 
-* Remember to create ```/data/step1_output/``` and ```/data/step2_output/``` folders manually before using this project. (If you get the error traceback of *FileNotFoundError*, you need to create that folder first).
+* Remember to create ```/data/step1_output/``` and ```/data/step2_output/``` folders under home directory ```/home/yourusername``` manually before using this project. (If you get the error traceback of *FileNotFoundError*, you need to create that folder first).
 
 ### Branches
 
@@ -18,5 +18,7 @@
 * ```pharrell-dev-001``` is the dev snapshot of the very first stage. It contains some codes that might be useful for future review.
 * ```pharrell-dev-002-tfrecord-tostring``` is the second stage of the development. And it contains valuable comments and playgrounds for experimental activities.
 
-###### If you want to use the project, please checkout ```master``` branch.  
+If you want to use the project, please checkout default branch ```angular_modes__with_smooth_block_removed```.
+
+The default branch provides all the tool developed in this project.  
   
