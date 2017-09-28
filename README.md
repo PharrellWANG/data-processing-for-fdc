@@ -20,5 +20,5 @@
 
 If you want to use the project, please checkout default branch ```angular_modes__with_smooth_block_removed```.
 
-The default branch provides all the tool developed in this project.  
+The default branch provides all the tools developed in this project.  
   
