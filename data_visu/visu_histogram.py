@@ -65,7 +65,7 @@ def main(_):
     # print(np_array_from_csv_file.shape)
     # print(np_array_from_csv_file.ndim)
     # n, bins = np.histogram(data, 100)
-    n, bins = np.histogram(np_array_from_csv_file, 20)
+    n, bins = np.histogram(np_array_from_csv_file, 5000)
 
     # get the corners of the rectangles for the histogram
     left = np.array(bins[:-1])

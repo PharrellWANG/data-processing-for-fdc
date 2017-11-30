@@ -21,6 +21,7 @@ $ python visualize_blocks.py \
 
 sample code:
 python data_visu/visualize_blocks.py --block_size=32 --mode=35 --skip_rows=20 --rows_to_read=4000
+python data_visu/visualize_blocks.py --skip_rows=20 --rows_to_read=4000 --block_size=8 --mode=1
 
 ```
 """
@@ -35,8 +36,8 @@ import matplotlib.pyplot as plt
 
 homedir = os.environ['HOME']
 CSV_FILES_FOR_VISUAL = [
-    # homedir + '/data/step2_output/size_08_files.csv',
-    homedir + '/data/smooth_removed/ave_90_size_08_files.csv',
+    homedir + '/data/step2_output/size_08_files.csv',
+    # homedir + '/data/smooth_removed/ave_90_size_08_files.csv',
     homedir + '/data/step2_output/size_16_files.csv',
     homedir + '/data/step2_output/size_32_files.csv',
     # '/Users/Pharrell_WANG/data/two_classes/32x32_train.csv',
@@ -127,8 +128,10 @@ def main(_):
         ' Block Size: ' + FLAGS.block_size)
     fig.set_facecolor('#B2B2B2')
     fig.suptitle(
-        "Visualization of 48 (6x8) collected block data \n INTRA MODE: " + FLAGS.mode +
-        '\n BLOCK SIZE: ' + FLAGS.block_size, fontsize=24)
+        "Intra mode: " + FLAGS.mode +
+        ' Block size: ' + FLAGS.block_size, fontsize=24)
+    # "Visualization of 48 (6x8) collected block data \n INTRA MODE: " + FLAGS.mode +
+    # '\n BLOCK SIZE: ' + FLAGS.block_size, fontsize=24)
     for row in csv:
         selected_mode = int(FLAGS.mode)
         features, label = row[:-1], row[-1]
