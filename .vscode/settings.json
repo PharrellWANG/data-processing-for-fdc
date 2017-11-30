@@ -2,6 +2,7 @@
   "cSpell.words": [
     "Pharrell"
   ],
+  "python.pythonPath": "/Users/Pharrell_WANG/.venv/tensorflow/bin/python",
   "files.exclude": {
     ".idea/": "explorerExcludedFiles"
   }
